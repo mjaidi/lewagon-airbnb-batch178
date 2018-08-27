@@ -9,13 +9,11 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @review = Review.new
-    @apartment = Apartment.all
-  end
+    end
+
   def create
     @cbooking = Bookng.new(booking_params)
-    if @booking.valid?
-      @booking.save
+    if @booking.save
       redirect_to booking_path(@booking)
     else
     render :new
@@ -24,6 +22,6 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit(:name)
+    params.require(:booking).permit(:start_date, :end_date, :status, :total_price, :apartment_id, :user_id, :created_at, :updated_at)
   end
 end
