@@ -5,7 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
 
-Apartment.create!
-Review.create!
-Booking.create!
+
+
+puts "cleaning database"
+
+ApptReview.destroy_all
+Booking.destroy_all
+Apartment.destroy_all
+User.destroy_all
+
+puts "adding data"
+booking_status = ["accepted", "pending", "rejected"]
+
+
+user1 = User.create(email: "majid.jaidi@gmail.com", password: "123456789", first_name: "Majid", last_name: "Jaidi", host_flag: false )
+
+user2 = User.create(email: "yashan@gmail.com", password: "987654321", first_name: "Yasmina", last_name: "Hannaoui", host_flag: true)
+
+10.times do
+  apartment = Apartment.create!(user_id: user1.id, description: Faker::BojackHorseman.quote, address: Faker::Address.full_address, price_per_day: rand(150), service_fees: rand(50) )
+  5.times do
+    startdate = Date.new(2018,rand(1..12),rand(1..28))
+    enddate = startdate + rand(10)
+    booking = Booking.create!(user_id: user1.id, apartment_id: apartment.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
+    5.times do 
+      ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
+    end
+  end
+end
+
+10.times do
+  apartment = Apartment.create!(user_id: user2.id, description: Faker::BojackHorseman.quote, address: Faker::Address.full_address, price_per_day: rand(150), service_fees: rand(50) )
+  5.times do
+    startdate = Date.new(2018,rand(1..12),rand(1..28))
+    enddate = startdate + rand(10)
+    booking = Booking.create!(user_id: user1.id, apartment_id: apartment.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
+    5.times do 
+      ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
+    end
+  end
+end
+
+
+puts "seed completed"
