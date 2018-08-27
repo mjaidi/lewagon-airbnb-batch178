@@ -19,6 +19,9 @@ gem 'webpacker'
 # Gem to setup user authentification
 gem 'devise'
 
+#Gem to seed the database with fake data
+gem 'faker'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
