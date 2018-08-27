@@ -3,7 +3,6 @@ class CreateApartments < ActiveRecord::Migration[5.2]
     create_table :apartments do |t|
       t.references :user, foreign_key: true
       t.string :description
-      t.string :photo
       t.string :address
       t.string :equipements
       t.integer :price_per_day
