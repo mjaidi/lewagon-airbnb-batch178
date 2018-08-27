@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_144218) do
   create_table "apartments", force: :cascade do |t|
     t.bigint "user_id"
     t.string "description"
-    t.string "photo"
     t.string "address"
     t.string "equipements"
     t.integer "price_per_day"
@@ -30,13 +29,11 @@ ActiveRecord::Schema.define(version: 2018_08_27_144218) do
 
   create_table "appt_reviews", force: :cascade do |t|
     t.bigint "booking_id"
-    t.bigint "user_id"
     t.integer "rating"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_appt_reviews_on_booking_id"
-    t.index ["user_id"], name: "index_appt_reviews_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -78,7 +75,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_144218) do
 
   add_foreign_key "apartments", "users"
   add_foreign_key "appt_reviews", "bookings"
-  add_foreign_key "appt_reviews", "users"
   add_foreign_key "bookings", "apartments"
   add_foreign_key "bookings", "users"
   add_foreign_key "photos", "apartments"
