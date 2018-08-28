@@ -22,6 +22,10 @@ gem 'devise'
 #Gem to seed the database with fake data
 gem 'faker'
 
+#Images Gem
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
