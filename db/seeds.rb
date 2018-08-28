@@ -26,25 +26,21 @@ user2 = User.create(email: "yashan@gmail.com", password: "987654321", first_name
 
 10.times do
   apartment = Apartment.create!(user_id: user1.id, description: Faker::BojackHorseman.quote, address: Faker::Address.full_address, price_per_day: rand(150), service_fees: rand(50) )
-  5.times do
+  10.times do
     startdate = Date.new(2018,rand(1..12),rand(1..28))
     enddate = startdate + rand(10)
     booking = Booking.create!(user_id: user1.id, apartment_id: apartment.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
-    5.times do 
-      ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
-    end
+    ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
   end
 end
 
 10.times do
   apartment = Apartment.create!(user_id: user2.id, description: Faker::BojackHorseman.quote, address: Faker::Address.full_address, price_per_day: rand(150), service_fees: rand(50) )
-  5.times do
+  10.times do
     startdate = Date.new(2018,rand(1..12),rand(1..28))
     enddate = startdate + rand(10)
     booking = Booking.create!(user_id: user1.id, apartment_id: apartment.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
-    5.times do 
-      ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
-    end
+    ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
   end
 end
 
