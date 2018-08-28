@@ -1,4 +1,4 @@
 class JoinAptEquip < ApplicationRecord
   belongs_to :apartment
-  belongs_to :equipment
+  belongs_to :equip
 end

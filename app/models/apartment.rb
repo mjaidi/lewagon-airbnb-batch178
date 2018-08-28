@@ -3,7 +3,8 @@ class Apartment < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
   has_many :photos
-  has_many :equipment, through: :join_apt_equips
+  has_many :join_apt_equips
+  has_many :equips, through: :join_apt_equips
   validates :user, presence: true
   validates :description, presence: true
   validates :address, presence: true

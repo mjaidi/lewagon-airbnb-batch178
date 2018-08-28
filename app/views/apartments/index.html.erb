@@ -14,7 +14,13 @@
       <li>
         <h4>Description: <%= apartment.description %></h4>
         <h4>Address: <%= apartment.address %></h4>
-        <h4>Equipments: <%= apartment.equipements %></h4>
+        <h4>Equipments: </h4>
+        <% apartment.equips.each do |equip| %>
+            <p><%14.times do %>
+              &nbsp
+              <% end %>
+              <%= equip.name.capitalize %></p>
+          <% end %>
         <h4>Price/day: $<%= apartment.price_per_day %></h4>
         <h4>Service Fee: $<%= apartment.service_fees %></h4>
       </li>

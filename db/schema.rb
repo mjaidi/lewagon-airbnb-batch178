@@ -48,17 +48,17 @@ ActiveRecord::Schema.define(version: 2018_08_28_104019) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "equipment", force: :cascade do |t|
+  create_table "equips", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "join_apt_equips", force: :cascade do |t|
     t.bigint "apartment_id"
-    t.bigint "equipment_id"
+    t.bigint "equip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["apartment_id"], name: "index_join_apt_equips_on_apartment_id"
-    t.index ["equipment_id"], name: "index_join_apt_equips_on_equipment_id"
+    t.index ["equip_id"], name: "index_join_apt_equips_on_equip_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -90,6 +90,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_104019) do
   add_foreign_key "bookings", "apartments"
   add_foreign_key "bookings", "users"
   add_foreign_key "join_apt_equips", "apartments"
-  add_foreign_key "join_apt_equips", "equipment"
+  add_foreign_key "join_apt_equips", "equips"
   add_foreign_key "photos", "apartments"
 end
