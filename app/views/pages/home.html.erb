@@ -6,107 +6,32 @@
   <h2> Find your new destination </h2>
   </div>
   <div class="row">
-
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="cards">
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://img.huffingtonpost.com/asset/5a3126821500004e0049b6c9.jpeg?ops=scalefit_720_noupscale');">
-            <span class="card-category">New Jersey</span>
-            <div class="card-description">
-              <h2>Jad's home</h2>
-              <p>Beautiful House</p>
-            </div>
-            <img class="card-user avatar avatar-large" src="images/jad.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="cards">
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.privateislandsonline.com/uploads/resize/_2084_image_da410516a2.jpg-537-411.jpg');">
-            <span class="card-category">Bélize</span>
-            <div class="card-description">
-              <h2>Danny's home</h2>
-              <p>Rent an island</p>
-            </div>
-            <img class="card-user avatar avatar-large" src="images/jad.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+      <% @apartments.each do |apartment| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="cards">
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://cdn.homedsgn.com/wp-content/uploads/2017/11/A-Contemporary-Tree-House-Near-Cape-Town-South-Africa-850x478.jpg');">
-            <span class="card-category">Brazil</span>
-            <div class="card-description">
-              <h2>Juao's home</h2>
-              <p>Experiment the life in a tree</p>
+          <div class="card">
+            <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.first.photo %>");'>
+              <span class="card-category">$ <%= apartment.price_per_day %></span>
+              <div class="card-description">
+                <h2><%=apartment.description.truncate(15)%></h2>
+                <p>Charming room in <%= apartment.address %></p>
+              </div>
+              <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+              <a class="card-link" href="#"></a>
             </div>
-            <img class="card-user avatar avatar-large" src="images/jad.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="cards">
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://s-i.huffpost.com/gen/2951752/thumbs/o-FLOATING-SEAHORSE-570.jpg?8.jpg');">
-            <span class="card-category">Morocco</span>
-            <div class="card-description">
-              <h2>Leo's home</h2>
-              <p>Underwater House</p>
-            </div>
-            <img class="card-user avatar avatar-large" src="images/jad.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
+            <div class="card-footer">
+              <p>Posted on <%=apartment.created_at%></p>
+              <div class="controls">
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="#"><i class="fa fa-share"></i></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
+      <% end %>
   </div>
 </div>
 </div>
-<% render "components/footer" %>
 
 <!-- <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
