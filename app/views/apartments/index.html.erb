@@ -1,30 +1,35 @@
 <div class="wrapper">
   <div class="container">
-    <h1>Appartements Search Page</h1>
-    <%= form_tag apartments_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an apartment by description"
-    %>
-  <% end %>
-  <hr>
-    <ul>
-    <% @apartments.each do |apartment| %>
-      <li>
-        <h4>Description: <%= apartment.description %></h4>
-        <h4>Address: <%= apartment.address %></h4>
-        <h4>Equipments: </h4>
-        <% apartment.equips.each do |equip| %>
-            <p><%14.times do %>
-              &nbsp
-              <% end %>
-              <%= equip.name.capitalize %></p>
-          <% end %>
-        <h4>Price/day: $<%= apartment.price_per_day %></h4>
-        <h4>Service Fee: $<%= apartment.service_fees %></h4>
-      </li>
-    <% end %>
-    </ul>
+    <h1>Appartements Results Page</h1>
+   <hr>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @apartments.each do |apartment| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.first.photo %>");'>
+              <span class="card-category">$ <%= apartment.price_per_day %></span>
+              <div class="card-description">
+                <h2><%=apartment.description.truncate(15)%></h2>
+                <p>Charming room in <%= apartment.address %></p>
+              </div>
+              <img class="card-user avatar avatar-large" src="images/jad.png">
+              <a class="card-link" href="#"></a>
+            </div>
+            <div class="card-footer">
+              <p>Posted on <%=apartment.created_at%></p>
+              <div class="controls">
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="#"><i class="fa fa-share"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

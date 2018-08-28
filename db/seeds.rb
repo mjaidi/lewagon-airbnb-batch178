@@ -11,8 +11,11 @@ require 'date'
 
 puts "cleaning database"
 
+Cloudinary::Api.delete_all_resources
 ApptReview.destroy_all
 Booking.destroy_all
+JoinAptEquip.destroy_all
+Photo.destroy_all
 Apartment.destroy_all
 User.destroy_all
 Equip.destroy_all
@@ -33,6 +36,12 @@ user2 = User.create(email: "yashan@gmail.com", password: "987654321", first_name
   apartment = Apartment.create!(user_id: user1.id, description: Faker::BojackHorseman.quote, address: Faker::Address.full_address, price_per_day: rand(150), service_fees: rand(50) )
   start_equip_id = Equip.first.id
   end_equip_id = Equip.last.id
+  2.times do  
+    url = "https://picsum.photos/350/500/?random"
+    photo = Photo.new(apartment_id: apartment.id)
+    photo.remote_photo_url = url
+    photo.save
+  end
   5.times do
     JoinAptEquip.create!(equip_id: rand(start_equip_id..end_equip_id), apartment_id: apartment.id)
   end
@@ -48,6 +57,12 @@ end
   apartment = Apartment.create!(user_id: user2.id, description: Faker::BojackHorseman.quote, address: Faker::Address.full_address, price_per_day: rand(150), service_fees: rand(50) )
   start_equip_id = Equip.first.id
   end_equip_id = Equip.last.id
+  2.times do 
+    url = "https://picsum.photos/350/500/?random"
+    photo = Photo.new(apartment_id: apartment.id)
+    photo.remote_photo_url = url
+    photo.save
+  end
   5.times do
     JoinAptEquip.create!(equip_id: rand(start_equip_id..end_equip_id), apartment_id: apartment.id)
   end
