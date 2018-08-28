@@ -1,17 +1,18 @@
-@import url("components/button.css");
-@import url("components/banner.css");
-@import url("components/avatar.css");
-@import url("components/card.css");
+// body {
+//   background-color: #000;
+//   background-image: url('https://cdn-images-1.medium.com/max/1330/1*_6EdJgpcWyeWne36eFH7eA@2x.jpeg'), url(banner.png);
+//   background-position: center center, center top;
+//   background-repeat: repeat, no-repeat;
+// }
 
-body {
-  margin: 0;
-  margin-bottom: 100px;
-  font-family: 'Varela Round', sans-serif;
-}
-.text-center {
-  text-align: center;
-}
-.container {
-  max-width: 1000px;
-  margin: 50px auto;
+.banner {
+  background-image: url(https://cdn-images-1.medium.com/max/1330/1*_6EdJgpcWyeWne36eFH7eA@2x.jpeg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100vh;
 }
