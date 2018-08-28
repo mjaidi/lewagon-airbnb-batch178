@@ -1,4 +1,8 @@
-<div class="navbar-wagon">
+<% if current_page?('/') == true %>
+<div class="navbar-wagon navbar-home navbar-fixed-top">
+  <% else %>
+  <div class="navbar-wagon">
+<% end %>
   <!-- Logo -->
   <div class="navbar-wagon-left">
     <div class="logo-navbar">
