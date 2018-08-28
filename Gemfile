@@ -18,6 +18,7 @@ gem 'webpacker'
 
 # Gem to setup user authentification
 gem 'devise'
+gem "pundit"
 
 #Gem to seed the database with fake data
 gem 'faker'
