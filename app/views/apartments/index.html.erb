@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Appartements Search Page</h1>
+    <%= form_tag apartments_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an apartment by description"
+    %>
+  <% end %>
+  <hr>
+    <ul>
+    <% @apartments.each do |apartment| %>
+      <li>
+        <h4>Description: <%= apartment.description %></h4>
+        <h4>Address: <%= apartment.address %></h4>
+        <h4>Equipments: <%= apartment.equipements %></h4>
+        <h4>Price/day: $<%= apartment.price_per_day %></h4>
+        <h4>Service Fee: $<%= apartment.service_fees %></h4>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
