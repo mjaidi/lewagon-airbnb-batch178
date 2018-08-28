@@ -1,7 +1,13 @@
 class ApartmentsController < ApplicationController
-before_action :find_apartment, only: [:show, :update, :edit, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]  
+  before_action :find_apartment, only: [:show, :update, :edit, :destroy]
   def index
-    @apartment = Apartment.all
+    if params[:query].present?
+      sql_query = "description ILIKE :query OR address ILIKE :query"
+      @apartments = Apartment.where(sql_query,query: "%#{params[:query]}%")
+    else
+      @apartments = Apartment.all
+    end
   end
 
   def show
