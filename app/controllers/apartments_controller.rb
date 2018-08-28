@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]  
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_apartment, only: [:show, :update, :edit, :destroy]
 
   def index
@@ -13,6 +13,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @apartment = Apartment.find(params[:id])
   end
 
   def create
