@@ -1,15 +1,17 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def show
     @booking = Booking.find(params[:id])
-    end
+    authorize @booking
+  end
 
   def create
     @cbooking = Bookng.new(booking_params)
@@ -18,6 +20,7 @@ class BookingsController < ApplicationController
     else
     render :new
     end
+    authorize @booking
   end
 
   private
