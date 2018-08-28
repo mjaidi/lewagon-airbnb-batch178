@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_action :authenticate_user!
+
+  before_action :authenticate_user!, :init_search
   include Pundit
 
   # Pundit: white-list approach.
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+  
+  def init_search
+    @search = true
   end
 end
