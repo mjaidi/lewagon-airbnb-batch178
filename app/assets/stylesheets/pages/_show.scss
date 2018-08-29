@@ -1,3 +1,9 @@
+.main-wrapper-show{
+  display:flex;
+  justify-content: space-between;
+}
+
+
 .wrapper-caroussel-show {
   height: 50vh;
 #carousel-show-apt {
@@ -19,32 +25,29 @@
 }
 
 .booking-widget {
-  margin: 20px auto;
+  
 }
 
 .booking-widget {
   box-sizing: border-box;
   width: 345px;
-  min-height: 605px;
+  min-height: 505px;
   padding-bottom: 1px;
   background-color: #fbfbfb;
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .44);
 }
 
-.booking-widget__header {
+.booking-widget-header {
   width: 100%;
-  height: 185px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 1px 0px 3px rgba(0, 0, 0, .44);
+  text-align: center;
+  h4 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  }
 }
 
-.booking-widget__header figure {
-  margin: 0;
-  padding: 0;
-}
 
 .header-caption {
   position: absolute;
@@ -122,12 +125,8 @@
 .form__dropdown {
   box-sizing: border-box;
   display: inline-block;
-  width: 45%;
+  width: 100%;
   padding: 5px;
-}
-
-.form__dropdown:last-child {
-  float: right;
 }
 
 .form__submit {
