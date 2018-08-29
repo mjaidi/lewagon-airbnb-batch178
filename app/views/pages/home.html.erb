@@ -12,7 +12,7 @@
   <div class="row">
       <% @apartments.each do |apartment| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          
+
           <div class="card">
             <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="5000">
               <!-- Indicators -->
@@ -68,6 +68,7 @@
           </div>
         </div>
       <% end %>
+            <%= link_to "Add an accomodation", new_apartment_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 </div>
