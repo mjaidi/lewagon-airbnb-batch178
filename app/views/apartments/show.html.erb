@@ -99,11 +99,40 @@
                   </div>
                   </div>
               </li>
-              <li>
-                  <input type="submit" id='bookingSubmit' class='form__submit' value='Book Now!' >
-              </li>
+              <div class="col-md-12  button--">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#zoomOutIn"> BOOK NOW</button>
+              </div>
           </ul>
       </form>
   </div>
-
 </div>
+
+<div class="modal fade  " id="zoomOutIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+     <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Confirmation booking</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Apartment:</h4><p><%= @apartment.name %></p>
+        </div>
+        <div class="modal-body">
+          <h4>Adress:</h4><p><%= @apartment.address %></p>
+        </div>
+        <div class="modal-body">
+          <h4>Price:</h4><p>$<%= @apartment.price_per_day %>/day</p>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-primary">Confim</button>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
