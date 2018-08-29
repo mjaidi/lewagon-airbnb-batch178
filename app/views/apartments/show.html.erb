@@ -4,68 +4,46 @@
 
 <%= render "components/carousel" %>
 
-<!-- slidebar details booking -->
-<div class="card border-dark mb-3">
-  <div class="card-header">Info booking</div>
-  <div class="card-body text-dark">
-    <div class="col-md-12" id="sidebar">
-      <div class="theiaStickySidebar">
-        <div class="box_style_1">
-          <div id="message-booking">
-          </div>
-          <form method="post" action="assets/check_avail.php" id="check_avail" autocomplete="off" >
-          <input name="room_type" id="room_type" type="hidden" value="Double room">
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Check in</label>
-                <input class="startDate1 form-control datepick" type="text" data-field="date" data-startend="start" data-startendelem=".endDate1" readonly placeholder="Arrival" id="check_in" name="check_in">
-                <span class="input-icon"><i class="icon-calendar-7"></i></span>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Check out</label>
-                <input class="endDate1 form-control datepick" type="text" data-field="date" data-startend="end" data-startendelem=".startDate1" readonly placeholder="Departure" id="check_out" name="check_out">
-                <span class="input-icon"><i class="icon-calendar-7"></i></span>
-              </div>
-            </div>
-          </div><!-- End row -->
-
-          <div class="row">
-            <div class="col-md-12 col-sm-6">
-              <div class="form-group">
-                <label>Guest</label>
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type GuestS
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Single</a></li>
-                    <li><a href="#">Couple</a></li>
-                    <li><a href="#">Family</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <div class="form-group">
-                <input type="submit" value="Book now" class="btn_full" id="submit-booking">
-              </div>
-            </div>
-          </div>
-          </form>
-          <hr>
-          <a href="#0" class="btn_outline"> or Contact us</a>
-          <a href="tel://004542344599" id="phone_2"><i class="icon_set_1_icon-91"></i>+45 423 445 99</a>
-        </div><!-- End box_style -->
-      </div><!-- End theiaStickySidebar -->
-    </div><!-- End col -->
+<!-- Booking Sidebar -->
+<div class="booking-widget">
+      <form>
+          <ul class='booking-widget__form'>
+              <li>
+                  <label for='check-in'>Check in</label>
+                  <div id='check-in' class='form-field'>
+                      <input type="text" value="" placeholder="9 July, 2016">
+                      <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                  </div>
+              </li>
+              <li>
+                  <label for='check-in'>Check out</label>
+                  <div id='check-out' class='form-field'>
+                      <input type="text" value="" placeholder="19 July, 2016">
+                      <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                  </div>
+              </li>
+              <li>
+                  <div class='form__dropdown'>
+                      <label for='adultsAmount'>Guests</label>
+                      <div class='form-field'> 
+                      <select id='adultsAmount'>    
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                      </select>
+                      <div class='select-button'><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                  </div>
+                  </div>
+              </li>
+              <li>
+                  <input type="submit" id='bookingSubmit' class='form__submit' value='Book Now!'>
+              </li>
+          </ul>       
+      </form>
   </div>
-</div>
-
-
-
-
 
 
 
