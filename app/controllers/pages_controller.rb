@@ -5,4 +5,9 @@ class PagesController < ApplicationController
     @apartments = policy_scope(Apartment)
     @apartments = @apartments.sample(6)
   end
+
+  def host
+    @user = current_user
+    @apartments = @user.apartments
+  end
 end
