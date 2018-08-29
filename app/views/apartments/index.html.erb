@@ -19,7 +19,7 @@
                     <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.first.photo %>");'>
                       <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
                       <div class="card-description">
-                        <h2><%=apartment.description.truncate(15)%></h2>
+                        <h2><%=apartment.name.truncate(15)%></h2>
                         <p>Charming room in <%= apartment.address %></p>
                       </div>
                       <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
@@ -30,7 +30,7 @@
                     <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.last.photo %>");'>
                       <span class="card-category">$ <%= apartment.price_per_day %></span>
                       <div class="card-description">
-                        <h2><%=apartment.description.truncate(15)%></h2>
+                        <h2><%=apartment.name.truncate(15)%></h2>
                         <p>Charming room in <%= apartment.address %></p>
                       </div>
                       <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
