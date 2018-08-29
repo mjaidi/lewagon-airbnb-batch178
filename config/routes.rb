@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       resources :reviews
     end
   end
+  get 'users/:user_id/host', to: 'pages#host', as: :host_user
 end
