@@ -1,7 +1,7 @@
 class Apartment < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_many :reviews, through: :bookings
+  has_many :appt_reviews, through: :bookings
   has_many :photos
   has_many :join_apt_equips
   has_many :equips, through: :join_apt_equips
