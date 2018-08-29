@@ -2,10 +2,13 @@
 <h1>Welcome <%= current_user.email %></h1>
 
 <p>List of your accomodations :</p>
-<% @apartments.each do |apartment| %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <% @apartments.each do |apartment| %>
       <div class="cards">
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://img.huffingtonpost.com/asset/5a3126821500004e0049b6c9.jpeg?ops=scalefit_720_noupscale');">
+      <div class="card">
+        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://img.huffingtonpost.com/asset/5a3126821500004e0049b6c9.jpeg?ops=scalefit_720_noupscale');">
             <span class="card-category">Shanghai</span>
             <div class="card-description">
               <h2><%= apartment.name %></h2>
@@ -22,13 +25,26 @@
               <a href="#"><i class="fa fa-star"></i></a>
               <a href="#"><i class="fa fa-heart"></i></a>
               <a href="#"><i class="fa fa-share"></i></a>
-            </div>
           </div>
         </div>
       </div>
-      <% end %>
-
-<%= link_to "Add accomodation", new_apartment_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <h2>Add an accomodation</h2>
+    <%= simple_form_for(@apartment, :html => { :multipart => true }) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.input :price_per_day %>
+        <%= f.fields_for :photos do |p| %>
+        <%= p.file_field :photo, :multiple => true %>
+    <% end %>
+        <%= f.button :submit, class: 'btn btn-create' %>
+    <% end %>
+  </div>
+</div>
 
 
 
