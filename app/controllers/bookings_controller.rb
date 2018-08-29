@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   def create
     @cbooking = Bookng.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@booking) => 'index'
+      redirect_to booking_path(@booking)
     else
     render :new
     end
