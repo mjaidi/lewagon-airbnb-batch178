@@ -1,0 +1,26 @@
+#main-apt-page-grid {
+  display: flex;
+  max-width: 100%;
+}
+#map-wrapper {
+  flex: 0 0 400px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+}
+
+#apt-results-wrapper {
+  flex: 0 0 150px;
+}
+
+@media (min-width: 992px) {
+ #results-container {
+    width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #results-container {
+    width: 1050px;
+  }
+}
