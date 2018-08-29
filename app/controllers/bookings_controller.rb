@@ -16,11 +16,12 @@ class BookingsController < ApplicationController
   def create
     @cbooking = Bookng.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking) => 'index'
     else
     render :new
     end
     authorize @booking
+    redirect_to apartment_booking_path
   end
 
   private
