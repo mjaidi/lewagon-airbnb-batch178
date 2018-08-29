@@ -36,7 +36,11 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apartment_params)
+    @apartment.user = current_user
     if @apartment.save
+      params[:photos]['photo'].each do |a|
+          @photo = @apartment.photos.create!(photo: a)
+       end
       redirect_to apartment_path(@apartment)
     else
       render :new
@@ -47,6 +51,7 @@ class ApartmentsController < ApplicationController
   def new
     @apartment = Apartment.new
     authorize @apartment
+    @photo = @apartment.photos.build
   end
 
   def edit
@@ -68,7 +73,7 @@ class ApartmentsController < ApplicationController
     private
 
   def apartment_params
-    params.require(:apartment).permit(:bookings, :photo, :reviews)
+    params.require(:apartment).permit(:bookings, :reviews, :name, :address, :service_fees, :description, :price_per_day, :photo, photos_attributes: [:id, :apartment_id, :photo])
   end
 
   def find_apartment
