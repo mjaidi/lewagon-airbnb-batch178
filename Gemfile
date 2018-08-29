@@ -27,6 +27,9 @@ gem 'faker'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
+#Geocoding Gems
+gem "geocoder"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

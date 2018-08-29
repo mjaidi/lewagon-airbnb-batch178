@@ -1,0 +1,87 @@
+<% content_for :title do %>
+    Airbnb <%= @apartment.name %>
+<% end %>
+
+<%= render "components/carousel" %>
+
+<div class="main-wrapper-show">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-9">
+        <h2><%= @apartment.name %></h2>
+        <p><em><%= @apartment.address %></em></p>
+        <hr>
+        <h4>Description</h4>
+        <p><%=@apartment.description%></p>
+
+        <h4>Room facilities</h4>
+        <p>
+            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <ul class="list-unstyled">
+          <% @apartment.equips.first(4).each do |equip| %>
+          <li><i class="fas fa-check"></i> <%=equip.name.capitalize  %></li>
+          <% end %>
+         </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <ul class="list-unstyled">
+          <% @apartment.equips[4..8].each do |equip| %>
+          <li><i class="fas fa-check"></i> <%=equip.name.capitalize  %></li>
+          <% end %>
+        </ul>
+      </div>
+     </div><!-- End row  -->
+  </div>
+  <!-- Booking Sidebar -->
+  <div class="booking-widget">
+    <div class="booking-widget-header">
+      <h4>Book your apartment today</h4>
+      <hr>
+    </div>
+      <form>
+          <ul class='booking-widget__form'>
+              <li>
+                  <label for='check-in'>Check in</label>
+                  <div id='check-in' class='form-field'>
+                      <input type="text" value="" placeholder="9 July, 2016">
+                      <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                  </div>
+              </li>
+              <li>
+                  <label for='check-in'>Check out</label>
+                  <div id='check-out' class='form-field'>
+                      <input type="text" value="" placeholder="19 July, 2016">
+                      <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                  </div>
+              </li>
+              <li>
+                  <div class='form__dropdown'>
+                      <label for='adultsAmount'>Guests</label>
+                      <div class='form-field'> 
+                      <select id='adultsAmount'>    
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                      </select>
+                      <div class='select-button'><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                  </div>
+                  </div>
+              </li>
+              <li>
+                  <input type="submit" id='bookingSubmit' class='form__submit' value='Book Now!'>
+              </li>
+          </ul>       
+      </form>
+  </div>
+
+</div>
