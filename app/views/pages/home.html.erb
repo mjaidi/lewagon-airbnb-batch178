@@ -1,3 +1,7 @@
+<% content_for :title do %>
+    Airbnb - home
+<% end %>
+
 <%= render "components/banner" %>
 
 <div class="wrapper">
@@ -27,7 +31,7 @@
                       <p>Charming room in <%= apartment.address %></p>
                     </div>
                     <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
-                    <a class="card-link" href="#"></a>
+                      <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                   </div>
                 </div>
                 <div class="item">
@@ -38,7 +42,7 @@
                       <p>Charming room in <%= apartment.address %></p>
                     </div>
                     <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
-                    <a class="card-link" href="#"></a>
+                      <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                   </div>
               </div>
             </div>
