@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Add an accomodation</h1>
+
+      <%= simple_form_for @apartment do |f| %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.input :price_per_day %>
+
+        <h6> Dowload images </h6>
+
+<form action="/action_page.php">
+  <input type="file" name="pic" accept="image/*">
+  <input type="submit">
+</form>
+
+      <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
