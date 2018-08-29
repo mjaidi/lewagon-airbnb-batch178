@@ -1,26 +1,32 @@
-#main-apt-page-grid {
-  display: flex;
-  max-width: 100%;
-}
 #map-wrapper {
-  flex: 0 0 400px;
-  height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: 0 !important;
+  height: 400px;
+  width: 100%;
 }
 
-#apt-results-wrapper {
-  flex: 0 0 150px;
+#map {
+  height: 100%;
+  width: 100%;
 }
+
 
 @media (min-width: 992px) {
  #results-container {
-    width: 900px;
+    width: 100%;
+  }
+    #main-apt-page-grid {
+    display: flex;
+  }
+  #map-wrapper {
+    flex: 0 0 30%;
+    height: 100vh;
+    position: sticky !important; /* !important to override Gmaps inline CSS */
+    top: 0 !important;
   }
 }
 
 @media (min-width: 1200px) {
   #results-container {
-    width: 1050px;
+    width: 100%;
   }
 }
+
