@@ -13,6 +13,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @apartment = Apartment.find(params[:id])
   end
 
   def create
