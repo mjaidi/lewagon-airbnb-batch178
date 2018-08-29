@@ -13,9 +13,11 @@
     <%= render "components/navbar" %>
     <%= render "components/flashes" %>
     <%= yield %>
+    <%= render "components/footer" %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
     <%= javascript_pack_tag 'application' %>
     <!-- SPECIFIC SCRIPTS -->
+    <%= javascript_pack_tag "map" %>
   </body>
-    <%= render "components/footer" %>
 </html>

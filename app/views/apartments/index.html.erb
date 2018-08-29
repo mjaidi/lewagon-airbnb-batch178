@@ -1,70 +1,74 @@
-<div class="wrapper">
-  <div class="container">
-    <h1>Appartements Results Page</h1>
-   <hr>
-  </div>
-</div>
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
-            <% @apartments.each do |apartment| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          
-          <div class="card">
-            <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="">
-              <!-- Indicators -->
-<!--               <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic<%= apartment.id %>" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic<%= apartment.id %>" data-slide-to="1"></li>
-              </ol> -->
+<div id="main-apt-page-grid">
+  <div class="wrapper" id="apt-results-wrapper">
+    <div class="container" id="results-container">
+      <div class="row">
+              <% @apartments.each do |apartment| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            
+            <div class="card">
+              <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="">
+                <!-- Indicators -->
+  <!--               <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic<%= apartment.id %>" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic<%= apartment.id %>" data-slide-to="1"></li>
+                </ol> -->
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.first.photo %>");'>
-                    <span class="card-category">$ <%= apartment.price_per_day %></span>
-                    <div class="card-description">
-                      <h2><%=apartment.description.truncate(15)%></h2>
-                      <p>Charming room in <%= apartment.address %></p>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.first.photo %>");'>
+                      <span class="card-category">$ <%= apartment.price_per_day %></span>
+                      <div class="card-description">
+                        <h2><%=apartment.description.truncate(15)%></h2>
+                        <p>Charming room in <%= apartment.address %></p>
+                      </div>
+                      <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                      <a class="card-link" href="#"></a>
                     </div>
-                    <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
-                    <a class="card-link" href="#"></a>
                   </div>
+                  <div class="item">
+                    <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.last.photo %>");'>
+                      <span class="card-category">$ <%= apartment.price_per_day %></span>
+                      <div class="card-description">
+                        <h2><%=apartment.description.truncate(15)%></h2>
+                        <p>Charming room in <%= apartment.address %></p>
+                      </div>
+                      <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                      <a class="card-link" href="#"></a>
+                    </div>
                 </div>
-                <div class="item">
-                  <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.last.photo %>");'>
-                    <span class="card-category">$ <%= apartment.price_per_day %></span>
-                    <div class="card-description">
-                      <h2><%=apartment.description.truncate(15)%></h2>
-                      <p>Charming room in <%= apartment.address %></p>
-                    </div>
-                    <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
-                    <a class="card-link" href="#"></a>
-                  </div>
               </div>
-            </div>
 
-              <!-- Controls -->
-              <a class="left carousel-control" href="#carousel-example-generic<%= apartment.id %>" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic<%= apartment.id %>" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-            <div class="card-footer">
-              <p>Posted on <%=apartment.created_at%></p>
-              <div class="controls">
-                <a href="#"><i class="fa fa-star"></i></a>
-                <a href="#"><i class="fa fa-heart"></i></a>
-                <a href="#"><i class="fa fa-share"></i></a>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic<%= apartment.id %>" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic<%= apartment.id %>" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              <div class="card-footer">
+                <p>Posted on <%=apartment.created_at%></p>
+                <div class="controls">
+                  <a href="#"><i class="fa fa-star"></i></a>
+                  <a href="#"><i class="fa fa-heart"></i></a>
+                  <a href="#"><i class="fa fa-share"></i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
+  <div class="wrapper" id="map-wrapper">
+      <div
+        id="map"
+        style="
+        height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
   </div>
 </div>

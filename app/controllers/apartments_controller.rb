@@ -7,8 +7,26 @@ class ApartmentsController < ApplicationController
     if params[:query].present?
       sql_query = "description ILIKE :query OR address ILIKE :query"
       @apartments = Apartment.where(sql_query,query: "%#{params[:query]}%")
+      @apartments = @apartments.where.not(latitude: nil, longitude: nil)
+
+      @markers = @apartments.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude#,
+          # infoWindow: { content: render_to_string(partial: "/apartments/map_box", locals: { flat: flat }) }
+        }
+      end
     else
       @apartments = Apartment.all
+      @apartments = @apartments.where.not(latitude: nil, longitude: nil)
+
+      @markers = @apartments.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude#,
+          # infoWindow: { content: render_to_string(partial: "/apartments/map_box", locals: { flat: flat }) }
+        }
+      end
     end
   end
 
