@@ -15,7 +15,7 @@
         <hr>
         <h4>Description</h4>
         <p><%=@apartment.description%></p>
-
+        <hr>
         <h4>Room facilities</h4>
         <p>
             Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
@@ -38,11 +38,33 @@
         </ul>
       </div>
      </div><!-- End row  -->
+     <hr>
+     <div class="row">
+       <div class="col-xs-12">
+         <h4>Reviews</h4>
+         <hr>
+         <ul class="list-unstyled">
+            <%@apartment.appt_reviews.each do |review|   %>
+            <li>
+              <h6><% review.rating.times do %>
+                <i class="fas fa-star"></i>
+                <% end %> 
+              </h6>
+              <p><%= review.comment %></p>
+            </li>
+            <hr>
+            <% end %>
+         </ul>
+       </div>
+     </div>
   </div>
   <!-- Booking Sidebar -->
   <div class="booking-widget">
     <div class="booking-widget-header">
       <h4>Book your apartment today</h4>
+      <hr>
+      <h5><strong>Price: </strong>$<%= @apartment.price_per_day %>/day</h5>
+      <h5><strong>Service Fee: </strong>$<%= @apartment.service_fees %></h5>
       <hr>
     </div>
       <form>
