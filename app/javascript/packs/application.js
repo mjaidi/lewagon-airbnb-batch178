@@ -1,10 +1,9 @@
 import "bootstrap";
 import { initUpdateNavbarOnScroll } from "../pages/navbar";
 import { loadDynamicBannerText } from '../pages/banner';
-import { initDropZone } from '../pages/form_dropzone';
+import "../pages/dropzone";
 
 
 
 loadDynamicBannerText();
 initUpdateNavbarOnScroll();
-initDropZone();

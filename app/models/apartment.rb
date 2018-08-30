@@ -5,7 +5,7 @@ class Apartment < ApplicationRecord
   has_many :photos
   accepts_nested_attributes_for :photos
 
-  has_many :join_apt_equips
+  has_many :join_apt_equips, dependent: :destroy
   has_many :equips, through: :join_apt_equips
   validates :user, presence: true
   validates :description, presence: true

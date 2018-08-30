@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   get 'users/:user_id/host', to: 'pages#host', as: :host_user
+  # patch 'apartments/:id/upload', to: 'apartments#upload', as: :apartments_img_upload
 end
