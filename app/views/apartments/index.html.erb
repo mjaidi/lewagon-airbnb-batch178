@@ -1,5 +1,5 @@
 <% content_for :title do %>
-   Airbnb - Results 
+   Airbnb - Results
 <% end %>
 
 
@@ -10,7 +10,7 @@
       <div class="row">
               <% @apartments.each do |apartment| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            
+
             <div class="card">
               <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="">
                 <!-- Indicators -->
@@ -31,11 +31,11 @@
                             <h2><%=apartment.name.truncate(15)%></h2>
                             <p>Charming room in <%= apartment.address %></p>
                           </div>
-                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
                           <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                         </div>
                       </div>
-                     <% else %> 
+                     <% else %>
                       <div class="item">
                         <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
                           <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
@@ -43,7 +43,7 @@
                             <h2><%=apartment.name.truncate(15)%></h2>
                             <p>Charming room in <%= apartment.address %></p>
                           </div>
-                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
                           <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                         </div>
                       </div>
@@ -57,7 +57,7 @@
                         <h2><%=apartment.name.truncate(15)%></h2>
                         <p>Charming room in <%= apartment.address %></p>
                       </div>
-                      <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                      <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
                       <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                     </div>
                   </div>

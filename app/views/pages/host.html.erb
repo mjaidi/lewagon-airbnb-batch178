@@ -34,11 +34,11 @@
                             <h2><%=apartment.name.truncate(15)%></h2>
                             <p>Charming room in <%= apartment.address %></p>
                           </div>
-                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
                           <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                         </div>
                       </div>
-                     <% else %> 
+                     <% else %>
                       <div class="item">
                         <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
                           <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
@@ -46,7 +46,7 @@
                             <h2><%=apartment.name.truncate(15)%></h2>
                             <p>Charming room in <%= apartment.address %></p>
                           </div>
-                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
                           <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                         </div>
                       </div>
@@ -60,7 +60,7 @@
                         <h2><%=apartment.name.truncate(15)%></h2>
                         <p>Charming room in <%= apartment.address %></p>
                       </div>
-                      <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                      <img class="card-user avatar" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
                       <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                     </div>
                   </div>
@@ -80,7 +80,7 @@
               <div class="card-footer center-card-footer">
                 <h5><%= link_to 'Modify', edit_apartment_path(apartment.id)%></h5>
               </div>
-            </div>          
+            </div>
     <% end %>
     </div>
   </div>
