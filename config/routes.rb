@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   get 'users/:user_id/host', to: 'pages#host', as: :host_user
+  get 'users/:user_id/messages', to: 'pages#messages', as: :messages_user
 end
