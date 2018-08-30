@@ -15,7 +15,7 @@
             <%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
         <% end %>
     </div>
-    <div class="col-md-6 form-horizontal">   
+    <div class="col-md-6 form-horizontal">
       <h2>Choose Your Equipment</h2>
         <%= f.association :equips, as: :check_boxes, label:"", class: "check-tag" %>
       </div>

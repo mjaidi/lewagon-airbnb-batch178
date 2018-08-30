@@ -54,7 +54,7 @@ class ApartmentsController < ApplicationController
   def new
     @apartment = Apartment.new
     authorize @apartment
-    @photo = @apartment.photos.build
+    #@photo = @apartment.photos.build
   end
 
   def edit
