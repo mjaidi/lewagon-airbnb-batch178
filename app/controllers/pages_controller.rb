@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   def host
     @user = current_user
     @apartments = @user.apartments
+    @apartment = Apartment.new
   end
 end
