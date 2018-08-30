@@ -67,19 +67,20 @@
       <h5><strong>Service Fee: </strong>$<%= @apartment.service_fees %></h5>
       <hr>
     </div>
+
       <form method="post" action="/apartments/<%= @apartment.id %>/bookings">
           <ul class='booking-widget__form'>
               <li>
                   <label for='check-in'>Check in</label>
                   <div id='check-in' class='form-field'>
-                      <input type="text" value="" name= 'booking[start_date]' placeholder="9 July, 2016">
+                      <input class="datepicker-ui" type="text" value="" name= 'booking[start_date]' placeholder="9 July, 2016">
                       <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
                   </div>
               </li>
               <li>
-                  <label for='check-in'>Check out</label>
+                  <label for='check-out'>Check out</label>
                   <div id='check-out' class='form-field'>
-                      <input type="text" value="" name= 'booking[end_date]' placeholder="19 July, 2016">
+                      <input class="datepicker-ui" type="text" value="" name= 'booking[end_date]' placeholder="19 July, 2016">
                       <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
                   </div>
               </li>
