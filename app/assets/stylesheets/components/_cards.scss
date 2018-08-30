@@ -11,6 +11,7 @@
 .card-body {
   height: 180px;
   background-size: cover;
+  background-position: center;
   color: white;
   position: relative;
 }
@@ -87,3 +88,6 @@ left: 65%;
 position: relative;
 height: 60%;
 }
+ .center-card-footer{
+  justify-content: center;
+ }

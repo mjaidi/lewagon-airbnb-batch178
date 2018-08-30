@@ -1,0 +1,31 @@
+.half-page-div {
+  background: #fbfbfbfb;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.44);
+  margin: 20px 0;
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+
+   .card-footer {
+    background: rgb(240,240,240);
+   } 
+  }
+}
+
+.form-group input[type="text"] {
+    height: 45px;
+    width: 100%;
+    padding: 0 0 0 3px;
+    background-color: #f4f4f4;
+    border: none;
+}
+.form-group input[type="number"] {
+    height: 45px;
+    width: 100%;
+    padding: 0 0 0 3px;
+    background-color: #f4f4f4;
+    border: none;
+}
