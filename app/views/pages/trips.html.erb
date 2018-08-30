@@ -1,0 +1,49 @@
+  <div class="container">
+    <h1>Your Trips</h1>
+    <h2>Upcoming Trips</h2>
+          <ul class = "inbox" style ="background:white;">
+        <% @future_bookings.each do |booking| %>
+          <li class = "message" >
+            <%= cl_image_tag(booking.apartment.photos.first.photo, class: "avatar-large") %>
+           <div class="message-name">
+            <p><strong>Dates</strong></p>
+            <p><%=booking.start_date %></p>
+            <p><%= booking.end_date %></p>
+            </div>
+            <div class="message-body">
+              <p><strong>Apartment: <%= booking.apartment.name %></strong></p>
+              <p>Description: <%= booking.apartment.description %></p>
+              <p># of Guests: <%= booking.number_guest %></p>
+            </div>
+            <div class="message-status">
+              <p class="price">$<%= booking.total_price %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <hr>
+    <h2>Past Trips</h2>
+      <ul class="inbox" style ="background:white;">
+        <% @past_bookings.each do |booking| %>
+           <li class = "message" >
+            <%= cl_image_tag(booking.apartment.photos.first.photo, class: "avatar-large") %>
+           <div class="message-name">
+            <p><strong>Dates</strong></p>
+            <p><%=booking.start_date %></p>
+            <p><%= booking.end_date %></p>
+            </div>
+            <div class="message-body">
+              <p><strong>Apartment: <%= booking.apartment.name %></strong></p>
+              <p>Description: <%= booking.apartment.description %></p>
+              <p># of Guests: <%= booking.number_guest %></p>
+            </div>
+            <div class="message-status">
+              <%= link_to "Add Review", new_apartment_booking_review_path(booking.apartment.id,booking.id), class: "btn btn-success" %>
+              <p class="price">$<%= booking.total_price %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+
+  
