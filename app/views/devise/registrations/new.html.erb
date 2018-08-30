@@ -5,8 +5,7 @@
 <div class="log-container-up">
 
   <div id="login-box">
-    <div class="left">
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),html: {class: "form-signin"}) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),html: {class: "form-signin"}) do |f| %>
           <%= f.error_notification %>
           <h2 class="form-signup-heading">Sign up</h2>
           <div class="form-inputs">
@@ -30,13 +29,12 @@
                   input_html: { autocomplete: "new-password" } %>
             <label class="checkbox"></label>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
 
-        <div class="form-actions">
-          <%= f.button :submit,"Log in",class: 'btn btn-primary'  %>
+            <div class="form-actions">
+              <%= f.button :submit,"Sign Up",class: 'btn btn-primary'  %>
+            </div>
         </div>
-      <% end %>
-    </div>
+          <% end %>
   </div>
 </div>
 
