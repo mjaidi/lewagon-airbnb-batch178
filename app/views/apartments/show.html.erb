@@ -67,19 +67,20 @@
       <h5><strong>Service Fee: </strong>$<%= @apartment.service_fees %></h5>
       <hr>
     </div>
+
       <form method="post" action="/apartments/<%= @apartment.id %>/bookings">
           <ul class='booking-widget__form'>
               <li>
                   <label for='check-in'>Check in</label>
                   <div id='check-in' class='form-field'>
-                      <input type="text" value="" name= 'booking[start_date]' placeholder="9 July, 2016">
+                      <input class="datepicker-ui" type="text" value="" name= 'booking[start_date]' placeholder="9 July, 2016">
                       <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
                   </div>
               </li>
               <li>
-                  <label for='check-in'>Check out</label>
+                  <label for='check-out'>Check out</label>
                   <div id='check-out' class='form-field'>
-                      <input type="text" value="" name= 'booking[end_date]' placeholder="19 July, 2016">
+                      <input class="datepicker-ui" type="text" value="" name= 'booking[end_date]' placeholder="19 July, 2016">
                       <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
                   </div>
               </li>
@@ -99,11 +100,98 @@
                   </div>
                   </div>
               </li>
+
               <li>
-                  <input type="submit" id='bookingSubmit' class='form__submit' value='Book Now!' >
+                  <!-- <in type="submit" id='bookingSubmit' class='form__submit' value='Book Now!' > -->
+                    <form role="form" id="formfield" action=/apartments/<%= @apartment.id %>/bookings" method="post"  enctype="multipart/form-data" onsubmit="return validateForm();">
+<input type="hidden" name="action" value="add_form" />
+
+
+
+            <input type="button" name="btn" value="Book Now" id="submitBtn" data-toggle="modal" data-target="#zoomOutIn" class="btn btn-default" />
+
+</form>
+
               </li>
           </ul>
       </form>
   </div>
-
 </div>
+
+<div class="modal fade  " id="zoomOutIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+     <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Confirmation booking</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Apartment:</h4><p><%= @apartment.name %></p>
+        </div>
+        <div class="modal-body">
+          <h4>Adress:</h4><p><%= @apartment.address %></p>
+        </div>
+        <div class="modal-body">
+          <h4>Price:</h4><p>$<%= @apartment.price_per_day %>/day</p>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-primary">Confim</button>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+              <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              Confirm Reservation
+                          </div>
+                          <div class="modal-body">
+                              Are you sure you want to submit the following details?
+                              <table class="table">
+                                  <tr>
+                                      <th>Info Apartment</th>
+                                      <td id="lname"></td>
+                                  </tr>
+                                  <tr>
+                                      <th>First Name</th>
+                                      <td id="fname"></td>
+                                  </tr>
+                              </table>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                              <a href="#" id="submit" class="btn btn-success success">Submit</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>  -->
+

@@ -1,0 +1,94 @@
+0000000000000000000000000000000000000000 a7517f418334927262ff012dbcc0ea105915265e Majid Jaidi <majid.jaidi@gmail.com> 1535371118 +0100	commit (initial): Initial commit with minimal template from https://github.com/lewagon/rails-templates
+a7517f418334927262ff012dbcc0ea105915265e 6069e34caf2f89a328c03e38c9dafd74e744ac54 Majid Jaidi <majid.jaidi@gmail.com> 1535377794 +0100	commit: database schema and models setup
+6069e34caf2f89a328c03e38c9dafd74e744ac54 54ce4687b0ee52ab791ddeea3323f723015ce285 Majid Jaidi <majid.jaidi@gmail.com> 1535381039 +0100	commit: added photo's table
+54ce4687b0ee52ab791ddeea3323f723015ce285 0a22ec4282c84e0dd870e1a29863f97f646bb0e1 Majid Jaidi <majid.jaidi@gmail.com> 1535382627 +0100	commit: corrected mistake in reviews model
+0a22ec4282c84e0dd870e1a29863f97f646bb0e1 1351980635033304483fd74f5d7ada60809c7800 Majid Jaidi <majid.jaidi@gmail.com> 1535383715 +0100	commit: created routes and controllers
+1351980635033304483fd74f5d7ada60809c7800 1351980635033304483fd74f5d7ada60809c7800 Majid Jaidi <majid.jaidi@gmail.com> 1535383822 +0100	checkout: moving from master to search_controls
+1351980635033304483fd74f5d7ada60809c7800 1351980635033304483fd74f5d7ada60809c7800 Majid Jaidi <majid.jaidi@gmail.com> 1535384440 +0100	checkout: moving from search_controls to master
+1351980635033304483fd74f5d7ada60809c7800 1351980635033304483fd74f5d7ada60809c7800 Majid Jaidi <majid.jaidi@gmail.com> 1535384462 +0100	checkout: moving from master to db_seed
+1351980635033304483fd74f5d7ada60809c7800 1351980635033304483fd74f5d7ada60809c7800 Majid Jaidi <majid.jaidi@gmail.com> 1535385196 +0100	checkout: moving from db_seed to master
+1351980635033304483fd74f5d7ada60809c7800 c04fd672e67f3b1da9d2ee53084b0a745db2f341 Majid Jaidi <majid.jaidi@gmail.com> 1535385367 +0100	pull origin master: Fast-forward
+c04fd672e67f3b1da9d2ee53084b0a745db2f341 c04fd672e67f3b1da9d2ee53084b0a745db2f341 Majid Jaidi <majid.jaidi@gmail.com> 1535385564 +0100	checkout: moving from master to db_seed
+c04fd672e67f3b1da9d2ee53084b0a745db2f341 f0cd48c74878b886d21385ceb30a4fdbbbee6657 Majid Jaidi <majid.jaidi@gmail.com> 1535385640 +0100	commit: included faker
+f0cd48c74878b886d21385ceb30a4fdbbbee6657 c830fb8b176a8ddcf95717825ff8e059c2b52df7 Majid Jaidi <majid.jaidi@gmail.com> 1535389868 +0100	commit: created seeds
+c830fb8b176a8ddcf95717825ff8e059c2b52df7 401232e5beeeaa6d504817a2f9dd006c01a697a7 Majid Jaidi <majid.jaidi@gmail.com> 1535443952 +0100	commit: modified seeds file
+401232e5beeeaa6d504817a2f9dd006c01a697a7 c04fd672e67f3b1da9d2ee53084b0a745db2f341 Majid Jaidi <majid.jaidi@gmail.com> 1535444046 +0100	checkout: moving from db_seed to master
+c04fd672e67f3b1da9d2ee53084b0a745db2f341 6995dd38a79632157d7e7309eb89a33ef675c7fc Majid Jaidi <majid.jaidi@gmail.com> 1535444054 +0100	pull origin master: Fast-forward
+6995dd38a79632157d7e7309eb89a33ef675c7fc 6995dd38a79632157d7e7309eb89a33ef675c7fc Majid Jaidi <majid.jaidi@gmail.com> 1535444179 +0100	checkout: moving from master to model_validations
+6995dd38a79632157d7e7309eb89a33ef675c7fc 610e18f244e1f94a6adaf66782609d0280ec082b Majid Jaidi <majid.jaidi@gmail.com> 1535445289 +0100	commit: added validations and setup cloudinary
+610e18f244e1f94a6adaf66782609d0280ec082b 6995dd38a79632157d7e7309eb89a33ef675c7fc Majid Jaidi <majid.jaidi@gmail.com> 1535445383 +0100	checkout: moving from model_validations to master
+6995dd38a79632157d7e7309eb89a33ef675c7fc 83260f9cd8569edc75b47816aa715645e285806d Majid Jaidi <majid.jaidi@gmail.com> 1535445461 +0100	pull origin master: Fast-forward
+83260f9cd8569edc75b47816aa715645e285806d 7e572b0aaccff106ef4e090c61c80819ac45c825 Majid Jaidi <majid.jaidi@gmail.com> 1535447826 +0100	pull origin master: Fast-forward
+7e572b0aaccff106ef4e090c61c80819ac45c825 7e572b0aaccff106ef4e090c61c80819ac45c825 Majid Jaidi <majid.jaidi@gmail.com> 1535447975 +0100	checkout: moving from master to pundit_setup
+7e572b0aaccff106ef4e090c61c80819ac45c825 7e572b0aaccff106ef4e090c61c80819ac45c825 Majid Jaidi <majid.jaidi@gmail.com> 1535448276 +0100	checkout: moving from pundit_setup to master
+7e572b0aaccff106ef4e090c61c80819ac45c825 7e572b0aaccff106ef4e090c61c80819ac45c825 Majid Jaidi <majid.jaidi@gmail.com> 1535448297 +0100	checkout: moving from master to basic_search
+7e572b0aaccff106ef4e090c61c80819ac45c825 be7c0d80cba9c8b926a7364bcee6652715245856 Majid Jaidi <majid.jaidi@gmail.com> 1535449742 +0100	commit: setup search controller and skeletton of search page
+be7c0d80cba9c8b926a7364bcee6652715245856 7e572b0aaccff106ef4e090c61c80819ac45c825 Majid Jaidi <majid.jaidi@gmail.com> 1535450842 +0100	checkout: moving from basic_search to master
+7e572b0aaccff106ef4e090c61c80819ac45c825 c4e171eca9d61df9e26a1b907f5551ee1188f4b3 Majid Jaidi <majid.jaidi@gmail.com> 1535450887 +0100	pull origin master: Fast-forward
+c4e171eca9d61df9e26a1b907f5551ee1188f4b3 c4e171eca9d61df9e26a1b907f5551ee1188f4b3 Majid Jaidi <majid.jaidi@gmail.com> 1535450943 +0100	checkout: moving from master to modify_apartment_data
+c4e171eca9d61df9e26a1b907f5551ee1188f4b3 b03b87fe774d3d04180c4aa6cf393aba9646cb09 Majid Jaidi <majid.jaidi@gmail.com> 1535452912 +0100	commit: modified database schema to add equipment in seperate table
+b03b87fe774d3d04180c4aa6cf393aba9646cb09 92a0ae5b24b52c274c2dfedf0c0fbcfebd63518f Majid Jaidi <majid.jaidi@gmail.com> 1535457836 +0100	commit: changed schema for apartmen-equipement relationship and showed it on search page
+92a0ae5b24b52c274c2dfedf0c0fbcfebd63518f c4e171eca9d61df9e26a1b907f5551ee1188f4b3 Majid Jaidi <majid.jaidi@gmail.com> 1535457894 +0100	checkout: moving from modify_apartment_data to master
+c4e171eca9d61df9e26a1b907f5551ee1188f4b3 731d7b408e572ac2af5a65610e581cf40b11e2cb Majid Jaidi <majid.jaidi@gmail.com> 1535457900 +0100	pull origin master: Fast-forward
+731d7b408e572ac2af5a65610e581cf40b11e2cb 731d7b408e572ac2af5a65610e581cf40b11e2cb Majid Jaidi <majid.jaidi@gmail.com> 1535457937 +0100	checkout: moving from master to add_pundit
+731d7b408e572ac2af5a65610e581cf40b11e2cb 8b961f76aa7839ca1c19af78edc222e5de411a71 Majid Jaidi <majid.jaidi@gmail.com> 1535462194 +0100	commit: added pundit -apartment controller and booking controller should be working for now
+8b961f76aa7839ca1c19af78edc222e5de411a71 6e7700fa48c68544b7312146192d7b5508626514 Majid Jaidi <majid.jaidi@gmail.com> 1535462462 +0100	commit: fixed conflict
+6e7700fa48c68544b7312146192d7b5508626514 f4cf850e9fdf17fefaf14f7ab783317d1165d2a2 Majid Jaidi <majid.jaidi@gmail.com> 1535462856 +0100	commit (merge): fixed application controller
+f4cf850e9fdf17fefaf14f7ab783317d1165d2a2 731d7b408e572ac2af5a65610e581cf40b11e2cb Majid Jaidi <majid.jaidi@gmail.com> 1535463055 +0100	checkout: moving from add_pundit to master
+731d7b408e572ac2af5a65610e581cf40b11e2cb 050c1fafa41f0ebbbec41580b583eb58021894d9 Majid Jaidi <majid.jaidi@gmail.com> 1535463063 +0100	pull origin master: Fast-forward
+050c1fafa41f0ebbbec41580b583eb58021894d9 050c1fafa41f0ebbbec41580b583eb58021894d9 Majid Jaidi <majid.jaidi@gmail.com> 1535463205 +0100	checkout: moving from master to seed_with_images
+050c1fafa41f0ebbbec41580b583eb58021894d9 b498d554ba48541319c5f54fabee369844b75d8a Majid Jaidi <majid.jaidi@gmail.com> 1535466066 +0100	commit: added photos seed
+b498d554ba48541319c5f54fabee369844b75d8a 4e65c0574cf7322f9b43614556b76bf64edcdf6c Majid Jaidi <majid.jaidi@gmail.com> 1535468172 +0100	commit: added seed with images and fixed search in navbar
+4e65c0574cf7322f9b43614556b76bf64edcdf6c 050c1fafa41f0ebbbec41580b583eb58021894d9 Majid Jaidi <majid.jaidi@gmail.com> 1535468291 +0100	checkout: moving from seed_with_images to master
+050c1fafa41f0ebbbec41580b583eb58021894d9 903dfd0664988f3208f77cb54c33add8862029f5 Majid Jaidi <majid.jaidi@gmail.com> 1535468303 +0100	pull origin master: Fast-forward
+903dfd0664988f3208f77cb54c33add8862029f5 903dfd0664988f3208f77cb54c33add8862029f5 Majid Jaidi <majid.jaidi@gmail.com> 1535470305 +0100	checkout: moving from master to caroussel
+903dfd0664988f3208f77cb54c33add8862029f5 903dfd0664988f3208f77cb54c33add8862029f5 Majid Jaidi <majid.jaidi@gmail.com> 1535470663 +0100	checkout: moving from caroussel to master
+903dfd0664988f3208f77cb54c33add8862029f5 01ec18c8691615d0f4268363fd87ab633a7a9040 Majid Jaidi <majid.jaidi@gmail.com> 1535470677 +0100	pull origin master: Fast-forward
+01ec18c8691615d0f4268363fd87ab633a7a9040 01ec18c8691615d0f4268363fd87ab633a7a9040 Majid Jaidi <majid.jaidi@gmail.com> 1535470693 +0100	checkout: moving from master to caroussel
+01ec18c8691615d0f4268363fd87ab633a7a9040 835a1b23fe228ec7c0310d542f4a9a3f02b7a397 Majid Jaidi <majid.jaidi@gmail.com> 1535471642 +0100	commit: added caroussel to cards
+835a1b23fe228ec7c0310d542f4a9a3f02b7a397 01ec18c8691615d0f4268363fd87ab633a7a9040 Majid Jaidi <majid.jaidi@gmail.com> 1535472211 +0100	checkout: moving from caroussel to master
+01ec18c8691615d0f4268363fd87ab633a7a9040 cd7f5a9cfcd2e85ef19fae0d74cf90979e60cb1e Majid Jaidi <majid.jaidi@gmail.com> 1535472219 +0100	pull origin master: Fast-forward
+cd7f5a9cfcd2e85ef19fae0d74cf90979e60cb1e b1d42a9b9b8edfa9334643782dbe2aec725256da Majid Jaidi <majid.jaidi@gmail.com> 1535474178 +0100	pull origin master: Fast-forward
+b1d42a9b9b8edfa9334643782dbe2aec725256da b1d42a9b9b8edfa9334643782dbe2aec725256da Majid Jaidi <majid.jaidi@gmail.com> 1535524477 +0100	checkout: moving from master to maps
+b1d42a9b9b8edfa9334643782dbe2aec725256da bd1fbdbb9094379b9f8b07c633615b816d7d9488 Majid Jaidi <majid.jaidi@gmail.com> 1535528226 +0100	commit: working map with markers on local server
+bd1fbdbb9094379b9f8b07c633615b816d7d9488 b1d42a9b9b8edfa9334643782dbe2aec725256da Majid Jaidi <majid.jaidi@gmail.com> 1535528274 +0100	checkout: moving from maps to master
+b1d42a9b9b8edfa9334643782dbe2aec725256da 8305a637562fd2de91201fbcb57ba70af00e6bf0 Majid Jaidi <majid.jaidi@gmail.com> 1535528284 +0100	pull origin master: Fast-forward
+8305a637562fd2de91201fbcb57ba70af00e6bf0 8305a637562fd2de91201fbcb57ba70af00e6bf0 Majid Jaidi <majid.jaidi@gmail.com> 1535529107 +0100	checkout: moving from master to fix_some_styling
+8305a637562fd2de91201fbcb57ba70af00e6bf0 6cacbef52b9080ed650842bc0ff78ba579f77b8c Majid Jaidi <majid.jaidi@gmail.com> 1535534870 +0100	commit: fixed navbar and some search page layout features - not fully perfect but better
+6cacbef52b9080ed650842bc0ff78ba579f77b8c 8305a637562fd2de91201fbcb57ba70af00e6bf0 Majid Jaidi <majid.jaidi@gmail.com> 1535534915 +0100	checkout: moving from fix_some_styling to master
+8305a637562fd2de91201fbcb57ba70af00e6bf0 15f683eeab498811055ff34c3f1c76724535a74d Majid Jaidi <majid.jaidi@gmail.com> 1535534949 +0100	pull origin master: Fast-forward
+15f683eeab498811055ff34c3f1c76724535a74d 15f683eeab498811055ff34c3f1c76724535a74d Majid Jaidi <majid.jaidi@gmail.com> 1535534984 +0100	checkout: moving from master to better_seeds
+15f683eeab498811055ff34c3f1c76724535a74d 9b585dd4ec2a679248119368656ed1377b6b8596 Majid Jaidi <majid.jaidi@gmail.com> 1535538686 +0100	commit: added keys and redid seed file
+9b585dd4ec2a679248119368656ed1377b6b8596 15f683eeab498811055ff34c3f1c76724535a74d Majid Jaidi <majid.jaidi@gmail.com> 1535538743 +0100	checkout: moving from better_seeds to master
+15f683eeab498811055ff34c3f1c76724535a74d 585cd52e68f09b9ae665d2a8bd0a5f880ae9fd8c Majid Jaidi <majid.jaidi@gmail.com> 1535538748 +0100	pull origin master: Fast-forward
+585cd52e68f09b9ae665d2a8bd0a5f880ae9fd8c 585cd52e68f09b9ae665d2a8bd0a5f880ae9fd8c Majid Jaidi <majid.jaidi@gmail.com> 1535538779 +0100	checkout: moving from master to styling_pages
+585cd52e68f09b9ae665d2a8bd0a5f880ae9fd8c 99227d9ede1fc4c020a54aa0d0767674a69389d5 Majid Jaidi <majid.jaidi@gmail.com> 1535539583 +0100	commit: added page titles and links between pages
+99227d9ede1fc4c020a54aa0d0767674a69389d5 585cd52e68f09b9ae665d2a8bd0a5f880ae9fd8c Majid Jaidi <majid.jaidi@gmail.com> 1535539649 +0100	checkout: moving from styling_pages to master
+585cd52e68f09b9ae665d2a8bd0a5f880ae9fd8c 81dea657e689909f2bb8b1c425e725984006d8d1 Majid Jaidi <majid.jaidi@gmail.com> 1535539656 +0100	pull origin master: Fast-forward
+81dea657e689909f2bb8b1c425e725984006d8d1 e78f0a07e352e3114a686c9c2017229ac025a553 Majid Jaidi <majid.jaidi@gmail.com> 1535540860 +0100	pull origin master: Fast-forward
+e78f0a07e352e3114a686c9c2017229ac025a553 e78f0a07e352e3114a686c9c2017229ac025a553 Majid Jaidi <majid.jaidi@gmail.com> 1535540883 +0100	checkout: moving from master to styling_apt_show
+e78f0a07e352e3114a686c9c2017229ac025a553 c46aa5a509575fbd7c2e4097051f902a95672e46 Majid Jaidi <majid.jaidi@gmail.com> 1535542464 +0100	commit: show banner styling working
+c46aa5a509575fbd7c2e4097051f902a95672e46 811ee70619e5e3abed8fd2b84c241232f36685d4 Majid Jaidi <majid.jaidi@gmail.com> 1535544583 +0100	commit: redid booking control
+811ee70619e5e3abed8fd2b84c241232f36685d4 006baff388a0429096ac2d12d91f01229f4c7166 Majid Jaidi <majid.jaidi@gmail.com> 1535546766 +0100	commit: fixing show styling layout
+006baff388a0429096ac2d12d91f01229f4c7166 8ab71c8f95f1d190e8b6d46f40eb6b1c7b11cd8d Majid Jaidi <majid.jaidi@gmail.com> 1535549005 +0100	commit: styling show page
+8ab71c8f95f1d190e8b6d46f40eb6b1c7b11cd8d e78f0a07e352e3114a686c9c2017229ac025a553 Majid Jaidi <majid.jaidi@gmail.com> 1535549112 +0100	checkout: moving from styling_apt_show to master
+e78f0a07e352e3114a686c9c2017229ac025a553 7e04addc8e3518fd086450123b404782b1581c23 Majid Jaidi <majid.jaidi@gmail.com> 1535549118 +0100	pull origin master: Fast-forward
+7e04addc8e3518fd086450123b404782b1581c23 7e04addc8e3518fd086450123b404782b1581c23 Majid Jaidi <majid.jaidi@gmail.com> 1535549485 +0100	checkout: moving from master to sign_in_navigation
+7e04addc8e3518fd086450123b404782b1581c23 8f92e93fc5119a1d6c5b85119b21457e771a4e4c Majid Jaidi <majid.jaidi@gmail.com> 1535550167 +0100	commit: added typed on home
+8f92e93fc5119a1d6c5b85119b21457e771a4e4c 7e04addc8e3518fd086450123b404782b1581c23 Majid Jaidi <majid.jaidi@gmail.com> 1535550351 +0100	checkout: moving from sign_in_navigation to master
+7e04addc8e3518fd086450123b404782b1581c23 be838e970fc59ec6ceb494e3238514f857b9ec0c Majid Jaidi <majid.jaidi@gmail.com> 1535550519 +0100	pull origin master: Fast-forward
+be838e970fc59ec6ceb494e3238514f857b9ec0c be838e970fc59ec6ceb494e3238514f857b9ec0c Majid Jaidi <majid.jaidi@gmail.com> 1535550539 +0100	checkout: moving from master to styling_navbar_buttons
+be838e970fc59ec6ceb494e3238514f857b9ec0c 11b0ff9013aa58b51449f359c874f5e62f9df635 Majid Jaidi <majid.jaidi@gmail.com> 1535555100 +0100	commit: added reviews
+11b0ff9013aa58b51449f359c874f5e62f9df635 be838e970fc59ec6ceb494e3238514f857b9ec0c Majid Jaidi <majid.jaidi@gmail.com> 1535555154 +0100	checkout: moving from styling_navbar_buttons to master
+be838e970fc59ec6ceb494e3238514f857b9ec0c dd5c5272d4ee788e750eec6619e366ef08ccefa3 Majid Jaidi <majid.jaidi@gmail.com> 1535555170 +0100	pull origin master: Fast-forward
+dd5c5272d4ee788e750eec6619e366ef08ccefa3 dd5c5272d4ee788e750eec6619e366ef08ccefa3 Majid Jaidi <majid.jaidi@gmail.com> 1535555198 +0100	checkout: moving from master to fix-forms
+dd5c5272d4ee788e750eec6619e366ef08ccefa3 dd5c5272d4ee788e750eec6619e366ef08ccefa3 Majid Jaidi <majid.jaidi@gmail.com> 1535555779 +0100	checkout: moving from fix-forms to master
+dd5c5272d4ee788e750eec6619e366ef08ccefa3 fc3e8047f9efe012e7d73ff0a233f500407b6a7d Majid Jaidi <majid.jaidi@gmail.com> 1535555844 +0100	pull origin master: Fast-forward
+fc3e8047f9efe012e7d73ff0a233f500407b6a7d fc3e8047f9efe012e7d73ff0a233f500407b6a7d Majid Jaidi <majid.jaidi@gmail.com> 1535555858 +0100	checkout: moving from master to config_photos
+fc3e8047f9efe012e7d73ff0a233f500407b6a7d 018ea099b5580b07653788dd87ed21d83060e432 Majid Jaidi <majid.jaidi@gmail.com> 1535557532 +0100	commit: added create apartment with many photos
+018ea099b5580b07653788dd87ed21d83060e432 fc3e8047f9efe012e7d73ff0a233f500407b6a7d Majid Jaidi <majid.jaidi@gmail.com> 1535557576 +0100	checkout: moving from config_photos to master
+fc3e8047f9efe012e7d73ff0a233f500407b6a7d 1ddc14baa33c2bd1d32c61bc8c585caf06bc4a53 Majid Jaidi <majid.jaidi@gmail.com> 1535557591 +0100	pull origin master: Fast-forward
+1ddc14baa33c2bd1d32c61bc8c585caf06bc4a53 01759971ed5b9d90a22948a0684b48acaaa839a0 Majid Jaidi <majid.jaidi@gmail.com> 1535560287 +0100	pull origin master: Fast-forward
+01759971ed5b9d90a22948a0684b48acaaa839a0 01759971ed5b9d90a22948a0684b48acaaa839a0 Majid Jaidi <majid.jaidi@gmail.com> 1535560359 +0100	checkout: moving from master to fix_photos_form
+01759971ed5b9d90a22948a0684b48acaaa839a0 b2595b6041169b875b02ee6e86be152ab1937783 Majid Jaidi <majid.jaidi@gmail.com> 1535561458 +0100	pull origin master: Fast-forward
+                                                                                                                                                              

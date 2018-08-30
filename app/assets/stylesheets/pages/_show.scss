@@ -30,7 +30,7 @@
 }
 
 .booking-widget {
-  
+
 }
 
 .booking-widget {
@@ -69,6 +69,8 @@
   font-size: 25px;
 }
 
+
+
 .booking-widget__form {
   list-style-type: none;
   padding: 0 25px 0 25px;
@@ -103,7 +105,7 @@
 
 .form-field label {
   color: #666666;
-} 
+}
 
 .datepicker, .select-button {
   box-sizing: border-box;
@@ -147,4 +149,48 @@
   box-shadow: 0px 1px 1px 0 darkgrey;
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+/* Modal effect 6  zoomOutIn */
+
+#zoomOutIn.modal.fade .modal-dialog {
+   -webkit-transform: scale(1.1);
+   -moz-transform: scale(1.1);
+   -ms-transform: scale(1.1);
+   transform: scale(1.1);
+   top: 120px;
+   opacity: 0;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   transition: all 0.3s;
+}
+
+#zoomOutIn.modal.fade.in .modal-dialog {
+   -webkit-transform: scale(1);
+   -moz-transform: scale(1);
+   -ms-transform: scale(1);
+   transform: scale(1);
+   -webkit-transform: translate3d(0, -120px, 0);
+   transform: translate3d(0, -120px, 0);
+   opacity: 1;
+}
+
+.modal-footer .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+    margin: 2px;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.428571429;
+    text-align: center;
+}
+
+.ui-datepicker {
+    width: 17em;
+    padding: .2em .2em 0;
+    display: none;
+    background: white;
 }
