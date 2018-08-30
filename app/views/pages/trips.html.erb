@@ -38,12 +38,37 @@
               <p># of Guests: <%= booking.number_guest %></p>
             </div>
             <div class="message-status">
-              <%= link_to "Add Review", new_apartment_booking_review_path(booking.apartment.id,booking.id), class: "btn btn-success" %>
+              <% if booking.appt_reviews.length == 0 %>
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add-review<%= booking.id %>">
+                  Add Review
+                </button>
+              <% end %>
               <p class="price">$<%= booking.total_price %></p>
             </div>
           </li>
+            <div class="modal fade" id="add-review<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">New Review</h4>
+                  </div>
+                  <div class="modal-body">
+                     <%= simple_form_for [booking.apartment,booking, @appt_reviews] do |f| %>
+                        <%= f.input :rating %>
+                        <%= f.input :comment %>
+                  
+                      <%= f.button :submit, class: 'btn btn-create' %>
+                    
+                    <% end %>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% end %>
       </ul>
   </div>
-
-  

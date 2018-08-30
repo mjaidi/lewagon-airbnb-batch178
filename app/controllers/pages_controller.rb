@@ -23,6 +23,7 @@ class PagesController < ApplicationController
     @bookings = @bookings.where(user_id: @user.id)
     @past_bookings = @bookings.where("start_date < ?", Date.today).order(start_date: :desc)
     @future_bookings =  @bookings.where("start_date >= ?", Date.today).order(start_date: :desc)
+    @appt_reviews = ApptReview.new
   end
 
   def messages

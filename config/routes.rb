@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :apartments do
     resources :bookings, except: [:edit, :update] do
-      resources :reviews
+      resources :appt_reviews
     end
   end
   get 'users/:user_id/host', to: 'pages#host', as: :host_user
