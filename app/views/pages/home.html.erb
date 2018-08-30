@@ -4,10 +4,12 @@
 
 <%= render "components/banner" %>
 
-<div class="wrapper">
-<div class="container">
-  <div class="title">
-  <h2> Find your new destination </h2>
+<div class="wrapper-home">
+<div class="container full-width">
+<div class="title-dest">
+
+  <h3> Find your new destination </h3>
+
   </div>
   <div class="row">
       <% @apartments.each do |apartment| %>
@@ -37,7 +39,7 @@
                           <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                         </div>
                       </div>
-                     <% else %> 
+                     <% else %>
                       <div class="item">
                         <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
                           <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
