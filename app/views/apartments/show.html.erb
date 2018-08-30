@@ -25,15 +25,19 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <ul class="list-unstyled">
+          <% unless @apartment.equips.nil? %>
           <% @apartment.equips.first(4).each do |equip| %>
           <li><i class="fas fa-check"></i> <%=equip.name.capitalize  %></li>
           <% end %>
          </ul>
+         <% end %>
       </div>
       <div class="col-xs-12 col-sm-6">
         <ul class="list-unstyled">
+          <% if @apartment.equips.length > 4 %>
           <% @apartment.equips[4..8].each do |equip| %>
           <li><i class="fas fa-check"></i> <%=equip.name.capitalize  %></li>
+          <% end %>
           <% end %>
         </ul>
       </div>
@@ -63,8 +67,8 @@
     <div class="booking-widget-header">
       <h4>Book your apartment today</h4>
       <hr>
-      <h5><strong>Price: </strong>$<%= @apartment.price_per_day %>/day</h5>
-      <h5><strong>Service Fee: </strong>$<%= @apartment.service_fees %></h5>
+      <h5><strong>Price: </strong>$ <span id="price"><%= @apartment.price_per_day %></span> /day</h5>
+      <h5><strong>Service Fee: </strong>$ <%= @apartment.service_fees %></h5>
       <hr>
     </div>
 
@@ -73,14 +77,14 @@
               <li>
                   <label for='check-in'>Check in</label>
                   <div id='check-in' class='form-field'>
-                      <input class="datepicker-ui" type="text" value="" name= 'booking[start_date]' placeholder="9 July, 2016">
+                      <input class="datepicker-ui" id= "checkin" type="text" value="" name= 'booking[start_date]' placeholder="9 July, 2016">
                       <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
                   </div>
               </li>
               <li>
                   <label for='check-out'>Check out</label>
                   <div id='check-out' class='form-field'>
-                      <input class="datepicker-ui" type="text" value="" name= 'booking[end_date]' placeholder="19 July, 2016">
+                      <input class="datepicker-ui" id= "checkout" type="text" value="" name= 'booking[end_date]' placeholder="19 July, 2016">
                       <div class='datepicker'><i class="fa fa-calendar" aria-hidden="true"></i></div>
                   </div>
               </li>
@@ -133,6 +137,9 @@
         </div>
         <div class="modal-body">
           <h4>Price:</h4><p>$<%= @apartment.price_per_day %>/day</p>
+        </div>
+        <div class="modal-body">
+          <h4>Total:</h4><p id="totalBookngPrice"></p>
         </div>
         <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

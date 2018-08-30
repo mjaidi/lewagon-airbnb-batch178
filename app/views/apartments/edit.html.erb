@@ -1,34 +1,10 @@
-<html>
-<body>
-
+<div class="wrapper" style="padding:0 20px;">
 <div class="container">
+  <h1>Edit your accomodation: <%= @apartment.name %></h1>
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h2>Modify your accomodation</h2>
-
-      <%= simple_form_for @apartment do |f| %>
-        <%= f.input :address %>
-        <%= f.input :description %>
-        <%= f.input :price_per_day %>
-
-
-      <div class="title-download">
-        <h6> Add images </h6>
-      </div>
-
-      <div class="action-page">
-      <form action="/action_page.php">
-        <input type="file" name="pic" accept="image/*">
-        <input type="submit">
-      </form>
-      </div>
-
-        <%= f.button :submit, class: 'btn btn-create' %>
-      <% end %>
-
-
-
+  <div class="half-page-div">
+    <%= render 'components/form_apt', apartment: @apartment %>
+  </div>
   </div>
 </div>
-</body>
-</html>
+</div>

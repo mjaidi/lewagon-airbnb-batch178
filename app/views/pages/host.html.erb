@@ -1,52 +1,90 @@
 
-<h1>Welcome <%= current_user.first_name %></h1>
-
-<p>List of your accomodations :</p>
-
+<div class="container">
+    <h1>Welcome <%= current_user.first_name %></h1>
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <% @apartments.each do |apartment| %>
-      <div class="cards">
-      <div class="card">
-        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://img.huffingtonpost.com/asset/5a3126821500004e0049b6c9.jpeg?ops=scalefit_720_noupscale');">
-            <span class="card-category">Shanghai</span>
-            <div class="card-description">
-              <h2><%= apartment.name %></h2>
-              <p><%= apartment.description %></p>
-            </div>
-            <img class="card-user avatar avatar-large" src="images/jad.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <%= link_to "Modify", edit_apartment_path(apartment), class: "btn btn" %>
-
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-          </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="half-page-div apt-form">
+      <h2 class= "text-center">Add a New Accomodation</h2>
+      <hr>
+       <%= render 'components/form_apt', apartment: @apartment %>
         </div>
-      </div>
-      </div>
-    <% end %>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <h2>Add an accomodation</h2>
-      <%= simple_form_for(@apartment, :html => { :multipart => true }) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :address %>
-          <%= f.input :description %>
-          <%= f.input :price_per_day %>
-          <%= f.input :service_fees %>
+  <div class="col-xs-12 col-sm-6 narrow ">
+    <div class="text-center">
+    <h2>List of your accomodations</h2>
+    <hr>
+    <% @apartments.each do |apartment| %>
+      <div class="card">
+              <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="">
+                <!-- Indicators -->
+  <!--               <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic<%= apartment.id %>" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic<%= apartment.id %>" data-slide-to="1"></li>
+                </ol> -->
 
-        <%= f.fields_for :photos do |p| %>
-            <%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
-        <% end %>
-          <%= f.button :submit, class: 'btn btn-create' %>
-      <% end %>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <% if apartment.photos.length > 0 %>
+                  <% apartment.photos.each_with_index do |p,i| %>
+                    <% if i == 0 %>
+                      <div class="item active">
+                        <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
+                          <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
+                          <div class="card-description">
+                            <h2><%=apartment.name.truncate(15)%></h2>
+                            <p>Charming room in <%= apartment.address %></p>
+                          </div>
+                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
+                        </div>
+                      </div>
+                     <% else %> 
+                      <div class="item">
+                        <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
+                          <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
+                          <div class="card-description">
+                            <h2><%=apartment.name.truncate(15)%></h2>
+                            <p>Charming room in <%= apartment.address %></p>
+                          </div>
+                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
+                        </div>
+                      </div>
+                      <% end %>
+                  <% end %>
+                  <% else %>
+                  <div class="item active">
+                    <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("");'>
+                      <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
+                      <div class="card-description">
+                        <h2><%=apartment.name.truncate(15)%></h2>
+                        <p>Charming room in <%= apartment.address %></p>
+                      </div>
+                      <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                      <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
+                    </div>
+                  </div>
+                  <% end %>
+              </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic<%= apartment.id %>" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic<%= apartment.id %>" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              <div class="card-footer center-card-footer">
+                <h5><%= link_to 'Modify', edit_apartment_path(apartment.id)%></h5>
+              </div>
+            </div>          
+    <% end %>
+    </div>
   </div>
 </div>
-
+</div>
 
 

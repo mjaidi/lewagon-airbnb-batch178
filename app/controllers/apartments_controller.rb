@@ -1,6 +1,6 @@
 class ApartmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_apartment, only: [:show, :update, :edit, :destroy]
+  before_action :find_apartment, only: [:show, :update, :edit, :destroy, :fill_form]
 
   def index
     @apartments = policy_scope(Apartment)
@@ -38,9 +38,12 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
     @apartment.user = current_user
     if @apartment.save
-      params[:photos["photo"]].each do |a|
+      params[:photos]['photo'].each do |a|
           @photo = @apartment.photos.create!(photo: a)
        end
+      params[:apartment]["equip_ids"].each do |p|
+        JoinAptEquip.create(apartment_id: @apartment.id, equip_id: p)
+      end
       redirect_to apartment_path(@apartment)
     else
       render :new
@@ -58,7 +61,19 @@ class ApartmentsController < ApplicationController
   end
 
   def update
-    if @apartment.update
+    if @apartment.update(apartment_params)
+      params[:photos]['photo'].each do |a|
+        @photo = @apartment.photos.create(photo: a)
+      end
+
+      joins = JoinAptEquip.where(apartment: @apartment)
+      joins.each do |j|
+         j.destroy
+      end
+
+      params[:apartment]["equip_ids"].each do |p|
+        JoinAptEquip.create(apartment_id: @apartment.id, equip_id: p)
+      end
       redirect_to apartment_path(@apartment)
     else
       render :edit
@@ -70,10 +85,16 @@ class ApartmentsController < ApplicationController
     redirect_to apartment_path(@apartment)
   end
 
+  # def upload
+  #   photo = Photo.new(apartment_id: apartment_params[:id])
+  #   photo.remote_photo_url = apartment_params[:photo]
+  #   photo.save
+  # end
+
     private
 
   def apartment_params
-    params.require(:apartment).permit(:bookings, :reviews, :name, :address, :service_fees, :description, :price_per_day, :photo, photos_attributes: [:id, :apartment_id, :photo])
+    params.require(:apartment).permit(:bookings, :reviews, :equip_ids, :name, :address, :service_fees, :description, :price_per_day, :photo, photos_attributes: [:id, :apartment_id, :photo])
   end
 
   def find_apartment

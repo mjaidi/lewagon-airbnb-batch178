@@ -1,0 +1,23 @@
+ <%= simple_form_for(apartment, :html => { :multipart => true }) do |f| %>
+        
+        <h3>Apartment Information</h3>
+        <hr>
+            <%= f.input :name %>
+            <%= f.input :address %>
+            <%= f.input :description %>
+            <%= f.input :price_per_day %>
+            <%= f.input :service_fees %>
+      
+        <h3>Add Your Photos</h3>
+        <hr>
+          <%= f.simple_fields_for :apartment do |p| %>
+              <%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
+          <% end %>
+
+        <h3>Choose Your Equipment</h3>
+        <hr>
+          <%= f.association :equips, as: :check_boxes, label:"", class: "check-tag" %>
+          <hr>
+          <%= f.button :submit, class: 'btn btn-create' %>
+        
+<% end %>

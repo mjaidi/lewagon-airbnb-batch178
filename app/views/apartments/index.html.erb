@@ -21,8 +21,37 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+                  <% if apartment.photos.length > 0 %>
+                  <% apartment.photos.each_with_index do |p,i| %>
+                    <% if i == 0 %>
+                      <div class="item active">
+                        <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
+                          <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
+                          <div class="card-description">
+                            <h2><%=apartment.name.truncate(15)%></h2>
+                            <p>Charming room in <%= apartment.address %></p>
+                          </div>
+                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
+                        </div>
+                      </div>
+                     <% else %> 
+                      <div class="item">
+                        <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path p.photo %>");'>
+                          <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
+                          <div class="card-description">
+                            <h2><%=apartment.name.truncate(15)%></h2>
+                            <p>Charming room in <%= apartment.address %></p>
+                          </div>
+                          <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
+                          <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
+                        </div>
+                      </div>
+                      <% end %>
+                  <% end %>
+                  <% else %>
                   <div class="item active">
-                    <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.first.photo %>");'>
+                    <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("");'>
                       <span class="card-category">$ <%= apartment.price_per_day %>/day</span>
                       <div class="card-description">
                         <h2><%=apartment.name.truncate(15)%></h2>
@@ -32,17 +61,7 @@
                       <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="card-body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(" <%= cl_image_path apartment.photos.last.photo %>");'>
-                      <span class="card-category">$ <%= apartment.price_per_day %></span>
-                      <div class="card-description">
-                        <h2><%=apartment.name.truncate(15)%></h2>
-                        <p>Charming room in <%= apartment.address %></p>
-                      </div>
-                      <img class="card-user avatar avatar-large" src="https://kitt.lewagon.com/placeholder/users/random<%=  rand(5)%>">
-                      <%= link_to "", apartment_path(apartment.id), class: "card-link" %>
-                    </div>
-                </div>
+                  <% end %>
               </div>
 
                 <!-- Controls -->
