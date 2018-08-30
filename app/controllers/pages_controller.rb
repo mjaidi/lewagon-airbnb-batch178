@@ -11,4 +11,8 @@ class PagesController < ApplicationController
     @apartments = @user.apartments
     @apartment = Apartment.new
   end
+
+  def messages
+    @user = current_user
+  end
 end
