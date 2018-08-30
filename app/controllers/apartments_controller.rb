@@ -38,7 +38,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
     @apartment.user = current_user
     if @apartment.save
-      params[:photos]['photo'].each do |a|
+      params[:photos["photo"]].each do |a|
           @photo = @apartment.photos.create!(photo: a)
        end
       redirect_to apartment_path(@apartment)

@@ -5,17 +5,23 @@
     <div class="col-md-8 col-md-offset-2">
       <h2>Add an accomodation</h2>
 
-<%= simple_form_for(@apartment, :html => { :multipart => true }) do |f| %>
-    <%= f.input :name %>
+<%= simple_form_for(@apartment, :html => { id: "add_apartment", class: "", :multipart => true }) do |f| %>
+    <%= f.input :name , placeholder: "Name"%>
     <%= f.input :address %>
     <%= f.input :description %>
     <%= f.input :price_per_day %>
     <%= f.input :service_fees %>
 
-  <%= f.fields_for :photos do |p| %>
-      <%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
-  <% end %>
-    <%= f.button :submit, class: 'btn btn-create' %>
+
+      <div class="dropzone">
+        <div class="dz-message ">
+            <span class="text">
+            <img src="https://image.ibb.co/cw1TNS/icons8_upload_to_ftp_100.png" alt="Camera" />
+              Drop your images here here or click to upload.
+            </span>
+          </div>
+        </div>
+      <%= f.button :submit, class: 'btn btn-create' %>
 <% end %>
 
 

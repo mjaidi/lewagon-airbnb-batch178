@@ -33,16 +33,18 @@
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6">
     <h2>Add an accomodation</h2>
-    <%= simple_form_for(@apartment, :html => { :multipart => true }) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :description %>
-        <%= f.input :price_per_day %>
+      <%= simple_form_for(@apartment, :html => { :multipart => true }) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :description %>
+          <%= f.input :price_per_day %>
+          <%= f.input :service_fees %>
+
         <%= f.fields_for :photos do |p| %>
-        <%= p.file_field :photo, :multiple => true %>
-    <% end %>
-        <%= f.button :submit, class: 'btn btn-create' %>
-    <% end %>
+            <%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
+        <% end %>
+          <%= f.button :submit, class: 'btn btn-create' %>
+      <% end %>
   </div>
 </div>
 
