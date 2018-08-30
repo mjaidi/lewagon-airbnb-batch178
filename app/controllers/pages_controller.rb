@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     @search = false
     @apartments = policy_scope(Apartment)
     @apartments = @apartments.sample(6)
+
+    @insolite = Apartment.where("address LIKE ?",'%Rouen%').sample(4)
+    @boats = Apartment.where("address LIKE ?",'%Marseille%').sample(4)
   end
 
   def host

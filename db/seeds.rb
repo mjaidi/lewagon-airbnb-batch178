@@ -44,8 +44,27 @@ url = [
  "https://res.cloudinary.com/mjedi/image/upload/v1535535408/Airbnb-Seeds/david-hellmann-256150-unsplash.jpg",
  "https://res.cloudinary.com/mjedi/image/upload/v1535535408/Airbnb-Seeds/paul-hanaoka-369639-unsplash.jpg",
  "https://res.cloudinary.com/mjedi/image/upload/v1535535407/Airbnb-Seeds/neonbrand-263851-unsplash.jpg",
- "https://res.cloudinary.com/mjedi/image/upload/v1535535407/Airbnb-Seeds/justin-schuler-253611-unsplash.jpg"
+ "https://res.cloudinary.com/mjedi/image/upload/v1535535407/Airbnb-Seeds/justin-schuler-253611-unsplash.jpg",
+ "https://cache.cosmopolitan.fr/data/photo/w660_c17/4k/airbnb-logement-piscine.jpg",
+ "https://i.ytimg.com/vi/770WhGkRfHI/maxresdefault.jpg",
+ "https://www.wheretraveler.com/sites/default/files/styles/promoted_image/public/gladden-private-island-aerial-water-view.jpg?itok=7oNZiDdL&timestamp=1501609215",
+ "https://cdn.asiatatler.com/asiatatler/hk/i/2017/11/14142904-GladdenPrivateIsland_cropped_1584x780.jpg",
+ "https://www.unilad.co.uk/wp-content/uploads/2016/02/seahorse1.jpg",
+ "https://i.ytimg.com/vi/H0r1bPOmil0/maxresdefault.jpg",
+ "https://les-cles-de-la-maison.devis-plus.com/wp-content/uploads/2012/05/maisons-arbres-L-15.jpeg",
+ "http://www.treehousepoint.com/images/treehouse-point.jpg",
+ "https://www.heesenyachts.com/app/uploads/2014/09/507-26-LADY-PETRA2emp2-640x390.jpg?x38579",
+ "https://image.northropandjohnson.com/image/nj/yacht/profile/539040?k=5857&w=1410&h=710&q=90&o=c",
+ "https://image.northropandjohnson.com/image/nj/yacht/profile/539043?k=b351&w=1410&h=710&q=90&o=c",
+ "https://image.northropandjohnson.com/image/nj/yacht/profile/654203?k=48cc&w=1410&h=710&q=90&o=c",
+ "https://image.northropandjohnson.com/image/nj/yacht/profile/654194?k=3330&w=1410&h=710&q=90&o=c",
+ "https://image.northropandjohnson.com/image/nj/yacht/profile/418153?k=db27&w=1410&h=710&q=90&o=c",
+ "https://image.northropandjohnson.com/image/nj/yacht/profile/61565?k=73f7&w=1410&h=710&q=90&o=c",
+ "https://www.catamarans-fountaine-pajot.com/wp-content/uploads/2018/01/photos-lucia-405-1330x800.jpg",
+ "http://www.nauticwebnews.com/picfr/2017/08/fountaine-pajot-sy-67-20m.jpg"
+
 ]
+
 
 
 equipment.each do |e|
@@ -137,9 +156,84 @@ apt10 = Apartment.create!(user_id: user2.id, name: "I'm Loving It", description:
     photo.remote_photo_url = url[i]
     i += 1
     photo.save
-end            
+end
 
-apartments = [apt1, apt2, apt3, apt4, apt5, apt6, apt7, apt8, apt9, apt10]
+# ----------Logements insolites----------
+
+# shell house
+apt11 = Apartment.create!(user_id: user2.id, name: "Original Shell House", description: Faker::Lorem.paragraph, address: "Rouen, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt11.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+# private island
+apt12 = Apartment.create!(user_id: user2.id, name: "Amazing Island", description: Faker::Lorem.paragraph, address: "Rouen, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt12.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+# underwater house
+apt13 = Apartment.create!(user_id: user2.id, name: "Unbelievable underwater house", description: Faker::Lorem.paragraph, address: "Rouen, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt13.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+# tree house
+apt14 = Apartment.create!(user_id: user2.id, name: "Unbelievable underwater house", description: Faker::Lorem.paragraph, address: "Rouen, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt14.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+
+# ----------Boats----------
+
+apt15 = Apartment.create!(user_id: user2.id, name: "15m Yacht", description: Faker::Lorem.paragraph, address: "Marseille, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt15.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+apt16 = Apartment.create!(user_id: user2.id, name: "Amazing Yacht", description: Faker::Lorem.paragraph, address: "Marseille, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt16.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+apt17 = Apartment.create!(user_id: user2.id, name: "Pole Experience", description: Faker::Lorem.paragraph, address: "Marseille, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt17.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+apt18 = Apartment.create!(user_id: user2.id, name: "Your own Catamaran", description: Faker::Lorem.paragraph, address: "Marseille, France", price_per_day: rand(150), service_fees: rand(50) )
+  2.times do
+    photo = Photo.new(apartment_id: apt18.id)
+    photo.remote_photo_url = url[i]
+    i += 1
+    photo.save
+end
+
+
+
+apartments = [apt1, apt2, apt3, apt4, apt5, apt6, apt7, apt8, apt9, apt10, apt11, apt12, apt13, apt14, apt15, apt16, apt17, apt18]
 
 apartments.each do |a|
   5.times do
