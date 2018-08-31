@@ -1,3 +1,7 @@
+<% content_for :title do %>
+   Airbnb - <%= current_user.first_name %>
+<% end %>
+
 
 <div class="container">
     <h1>Welcome <%= "#{current_user.first_name} #{current_user.last_name}"%></h1>
@@ -10,9 +14,11 @@
         </div>
   </div>
   <div class="col-xs-12 col-sm-6 narrow ">
-    <div class="text-center">
+    <div>
+      <div class="text-center">
     <h2>List of your accomodations</h2>
     <hr>
+    </div>
     <% @apartments.each do |apartment| %>
       <div class="card">
               <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="">
