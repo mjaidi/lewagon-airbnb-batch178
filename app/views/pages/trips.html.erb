@@ -8,6 +8,7 @@
   <h3 class="effect-shine"> Upcoming Trips </h3>
   </div>
     
+
           <ul class = "inbox" style ="background:white;">
         <% @future_bookings.each do |booking| %>
           <li class = "message" >
@@ -72,9 +73,9 @@
                      <%= simple_form_for [booking.apartment,booking, @appt_reviews] do |f| %>
                         <%= f.input :rating, collection: ApptReview::RATE %>
                         <%= f.input :comment, as: :text %>
-                  
+
                       <%= f.button :submit, class: 'btn btn-create' %>
-                    
+
                     <% end %>
 
                   </div>
@@ -87,5 +88,7 @@
         <% end %>
       </ul>
   </div>
+
   <br>
   <br>
+
