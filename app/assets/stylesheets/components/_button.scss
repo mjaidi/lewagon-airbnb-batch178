@@ -13,12 +13,49 @@
   border-radius: 8px;
 }
 
-.btn.btn-default{
+.btn.btn-default.search-btn {
 border-radius: 10px;
+background-color: #ed5434;
 }
 
 .form-control-btn{
   border-radius: 8px;
   height: 38px;
 
+}
+
+.btn-default.booking-btn {
+  color: #333;
+  background-color: #ed5434;
+  border-color: #ccc;
+  padding: 12px 20px;
+  color: #fbf7f7;
+  width: 100%;
+}
+
+.searchButton {
+
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ed5434;
+  background: #ed5434;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #ed5434;
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
 }

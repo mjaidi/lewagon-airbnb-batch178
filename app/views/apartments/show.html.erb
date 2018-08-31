@@ -13,16 +13,32 @@
         <h2><%= @apartment.name %></h2>
         <p><em><%= @apartment.address %></em></p>
         <hr>
-        <h4>Description</h4>
-        <p><%=@apartment.description%></p>
-        <hr>
-        <h4>Room facilities</h4>
-        <p>
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <h4>Description</h4>
+          </div>
+          <div class="col-md-9">
+            <p><%=@apartment.description%></p>
+          </div>
+            <hr>
+          <div class="col-md-3">
+            <h4>Room facilities</h4>
+          </div>
+          <div class="col-md-9">
+            <p>
             Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+    <hr>
     <div class="row">
+      <br>
+      <div class="col-md-3">
+        <h4>Equipment</h4>
+      </div>
       <div class="col-xs-12 col-sm-6">
         <ul class="list-unstyled">
           <% unless @apartment.equips.nil? %>
@@ -43,11 +59,12 @@
       </div>
      </div><!-- End row  -->
 
-     <hr>
+     <br>
+     <br>
      <div class="row">
        <div class="col-xs-12">
          <h4>Reviews</h4>
-         <hr>
+          <hr>
          <ul class="list-unstyled">
             <%@apartment.appt_reviews.each do |review|   %>
             <li>
@@ -57,7 +74,6 @@
               </h6>
               <p><%= review.comment %></p>
             </li>
-            <hr>
             <% end %>
          </ul>
        </div>
@@ -108,7 +124,7 @@
             </li>
             <li>
               <input type="hidden" name="action" value="add_form" />
-              <input type="button" name="btn" value="Book Now" data-toggle="modal" data-target="#zoomOutIn" class="btn btn-default" id="submitBtn" />
+              <input type="button" name="btn" value="Book Now" data-toggle="modal" data-target="#zoomOutIn" class="btn btn-default booking-btn" id="submitBtn" />
             </li>
           </ul>
         </form>
@@ -134,7 +150,7 @@
             <h4>Total:</h4><p id="totalBookngPrice"></p>
           </div>
           <div class="modal-footer">
-            <button type="button"  class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button"  class="btn btn-default-1" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="comfirm">Confim</button>
           </div>
         </div>
