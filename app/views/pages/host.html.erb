@@ -4,22 +4,33 @@
 
 
 <div class="container">
-    <h1>Welcome <%= "#{current_user.first_name} #{current_user.last_name}"%></h1>
+
+    <h2>Welcome <%= "#{current_user.first_name} #{current_user.last_name}"%></h2>
 <div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <div class="half-page-div apt-form">
-      <h2 class= "text-center">Add a New Accomodation</h2>
+  <div class="col-xs-12 col-sm-6 half-page">
+    <div class="">
+      <div class="title-dest">
+        <h3 class="effect-shine"> Add a New Accomodation </h3>
+      </div>
       <hr>
+      <div class="half-page-div apt-form">
        <%= render 'components/form_apt', apartment: @apartment %>
+       </div>
         </div>
   </div>
-  <div class="col-xs-12 col-sm-6 narrow ">
+  <div class="col-xs-12 col-sm-6 narrow half-page ">
     <div>
       <div class="text-center">
-    <h2>List of your accomodations</h2>
+       <div class="title-dest">
+        <h3 class="effect-shine"> List of your Accomodations </h3>
+      </div>
     <hr>
+    <br>
     </div>
+    <div class="container">
+      <div class="row">
     <% @apartments.each do |apartment| %>
+    <div class="col-xs-6">
       <div class="card">
               <div id="carousel-example-generic<%= apartment.id %>" class="carousel slide card-body" data-ride="carousel" data-interval="">
                 <!-- Indicators -->
@@ -87,7 +98,10 @@
                 <h5><%= link_to 'Modify', edit_apartment_path(apartment.id)%></h5>
               </div>
             </div>
+            </div>
     <% end %>
+    </div>
+    </div>
     </div>
   </div>
 </div>
