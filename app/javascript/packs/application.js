@@ -42,6 +42,8 @@ jQuery(function($){
 $(".datepicker-ui").datepicker();
 
 function differenceInDays (d1,d2){
+  d1 = d1.split("-")[1]+ "-" + d1.split("-")[0] + "-" + d1.split("-")[2];
+  d2 = d2.split("-")[1]+ "-" + d2.split("-")[0] + "-" + d2.split("-")[2];
   let date1 = new Date(d1);
   let date2 = new Date(d2);
 
@@ -54,8 +56,10 @@ $("#submitBtn").click(function() {
   let days = differenceInDays($("#checkin").val(), $("#checkout").val());
   let people = $("#adultsAmount").val();
   let price = $("#price")[0].innerHTML;
+  console.log("done > " +$("#checkin").val())
+  console.log("done > " +$("#checkout").val())
   console.log("done > " + days + 'and' + people + 'and' + price);
-  $("#totalBookngPrice")[0].innerHTML = ( days * people * price );
+  $("#totalBookngPrice")[0].innerHTML = "$"+ ( days * people * price );
 });
 
 $("#comfirm").click(function(){

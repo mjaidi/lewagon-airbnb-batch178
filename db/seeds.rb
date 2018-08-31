@@ -241,11 +241,16 @@ apartments.each do |a|
     end_equip_id=Equip.last.id
     JoinAptEquip.create!(equip_id: rand(start_equip_id..end_equip_id), apartment_id: a.id)
   end
-  10.times do
+  5.times do
     startdate = Date.new(2018,rand(1..12),rand(1..28))
     enddate = startdate + rand(10)
-    booking = Booking.create!(user_id: user1.id, apartment_id: a.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
+    booking = Booking.create!(user_id: [user1.id, user2.id, user3.id].sample, apartment_id: a.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
     ApptReview.create!(booking_id: booking.id, rating: rand(1..5), comment: Faker::FamousLastWords.last_words)
+  end
+  5.times do
+    startdate = Date.new(2018,rand(1..12),rand(1..28))
+    enddate = startdate + rand(10)
+    booking = Booking.create!(user_id: [user1.id, user2.id, user3.id].sample, apartment_id: a.id, status: booking_status.sample, start_date: startdate, end_date: enddate)
   end
 end
 
