@@ -50,16 +50,16 @@
               <p># of Guests: <%= booking.number_guest %></p>
             </div>
             <div class="message-status">
-              <% if booking.appt_reviews.length == 0 %>
-              <% end %>
               <div class = "text-right">
               <p class="price">$<%= booking.total_price %></p>
               </div>
+              <% if booking.appt_reviews.length == 0 %>
               <div>
                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add-review<%= booking.id %>">
                   Add Review
                 </button>
                 </div>
+              <% end %>
             </div>
           </li>
             <div class="modal fade" id="add-review<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
