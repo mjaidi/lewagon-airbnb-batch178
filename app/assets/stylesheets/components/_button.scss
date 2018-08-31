@@ -21,6 +21,7 @@ background-color: #ed5434;
 .form-control-btn{
   border-radius: 8px;
   height: 38px;
+  width: 300px;
   display: flex;
   margin-top: 10px;
 }
@@ -39,8 +40,8 @@ background-color: #ed5434;
   right: -50px;
   width: 40px;
   height: 40px;
-  border: 1px solid #ed5434;
-  background: #ed5434;
+  border: 1px solid #00B4CC;
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
   text-align: center;
   color: #fff;
   border-radius: 5px;
@@ -52,10 +53,23 @@ background-color: #ed5434;
 .searchTerm {
   float: left;
   width: 100%;
-  border: 3px solid #ed5434;
+  border: 2px solid #00B4CC;
   padding: 5px;
   height: 40px;
   border-radius: 5px;
   outline: none;
   color: #9DBFAF;
+}
+
+.fa-star:before {
+  content: "\f005";
+  color: #E2EC12;
+}
+.fa-heart:before {
+  content: "\f004";
+  color: #DE4A7B;
+}
+.fa-share:before {
+  content: "\f064";
+  color:#36A08A ;
 }
