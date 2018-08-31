@@ -2,11 +2,12 @@ import "bootstrap";
 import "jquery-ui/ui/widgets/datepicker";
 import { initUpdateNavbarOnScroll } from "../pages/navbar";
 import { loadDynamicBannerText } from '../pages/banner';
+import { initCheckBox } from '../pages/checkboxes';
 import "../pages/dropzone";
 
 
 
-
+initCheckBox();
 loadDynamicBannerText();
 initUpdateNavbarOnScroll();
 /* French initialisation for the jQuery UI date picker plugin. */

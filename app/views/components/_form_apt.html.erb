@@ -4,7 +4,7 @@
         <hr>
             <%= f.input :name %>
             <%= f.input :address %>
-            <%= f.input :description %>
+            <%= f.input :description, as: :text %>
             <%= f.input :price_per_day %>
             <%= f.input :service_fees %>
       
@@ -14,9 +14,14 @@
               <%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
           <% end %>
 
+
+
+
         <h3>Choose Your Equipment</h3>
         <hr>
-          <%= f.association :equips, as: :check_boxes, label:"", class: "check-tag" %>
+        <div id="equipements">
+          <%= f.association :equips, as: :check_boxes, :item_wrapper_class => 'btn btn-primary btn-sm transparent', label:"" %>
+          </div>
           <hr>
           <%= f.button :submit, class: 'btn btn-create' %>
         

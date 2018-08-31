@@ -55,8 +55,8 @@
                   </div>
                   <div class="modal-body">
                      <%= simple_form_for [booking.apartment,booking, @appt_reviews] do |f| %>
-                        <%= f.input :rating %>
-                        <%= f.input :comment %>
+                        <%= f.input :rating, collection: ApptReview::RATE %>
+                        <%= f.input :comment, as: :text %>
                   
                       <%= f.button :submit, class: 'btn btn-create' %>
                     
