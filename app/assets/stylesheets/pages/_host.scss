@@ -1,5 +1,5 @@
 .half-page-div {
-  background: #fbfbfbfb;
+  background: #eee;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.44);
@@ -19,3 +19,24 @@
   background: none;
   color: #418DBD;
 }
+
+.title-dest-black{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  overflow:hidden;
+  text-transform: uppercase;
+  text-weight: bold;
+}
+
+@media (min-width: 992px) {
+ .half-page {
+    width: 50%;
+    .container {
+      width: 100%
+    }
+  }
+}
+

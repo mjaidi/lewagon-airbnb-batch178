@@ -63,6 +63,9 @@
 .message-status {
   font-size: 14px;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
 }
 .status.accepted {
   color: green;

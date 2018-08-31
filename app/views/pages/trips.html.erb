@@ -3,8 +3,11 @@
 <% end %>
 
   <div class="container">
-    <h1>Your Trips</h1>
-    <h2>Upcoming Trips</h2>
+    <h2>Your Trips</h2>
+    <div class="title-dest">
+  <h3 class="effect-shine"> Upcoming Trips </h3>
+  </div>
+    
           <ul class = "inbox" style ="background:white;">
         <% @future_bookings.each do |booking| %>
           <li class = "message" >
@@ -20,13 +23,17 @@
               <p># of Guests: <%= booking.number_guest %></p>
             </div>
             <div class="message-status">
+              <div>
               <p class="price">$<%= booking.total_price %></p>
+              </div>
             </div>
           </li>
         <% end %>
       </ul>
       <hr>
-    <h2>Past Trips</h2>
+        <div class="title-dest">
+  <h3 class="effect-shine"> Past Trips </h3>
+  </div>
       <ul class="inbox" style ="background:white;">
         <% @past_bookings.each do |booking| %>
            <li class = "message" >
@@ -43,11 +50,15 @@
             </div>
             <div class="message-status">
               <% if booking.appt_reviews.length == 0 %>
+              <% end %>
+              <div class = "text-right">
+              <p class="price">$<%= booking.total_price %></p>
+              </div>
+              <div>
                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add-review<%= booking.id %>">
                   Add Review
                 </button>
-              <% end %>
-              <p class="price">$<%= booking.total_price %></p>
+                </div>
             </div>
           </li>
             <div class="modal fade" id="add-review<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -76,3 +87,5 @@
         <% end %>
       </ul>
   </div>
+  <br>
+  <br>
