@@ -10,8 +10,11 @@
 
 
 @media (min-width: 992px) {
- #results-container {
-    width: 100%;
+ #apt-results-wrapper {
+    width: 70%;
+    #results-container {
+      width: 100%
+    }
   }
     #main-apt-page-grid {
     display: flex;
@@ -25,8 +28,12 @@
 }
 
 @media (min-width: 1200px) {
-  #results-container {
+ #apt-results-wrapper {
     width: 100%;
+    #results-container {
+      width: 100%
+    }
   }
 }
+
 

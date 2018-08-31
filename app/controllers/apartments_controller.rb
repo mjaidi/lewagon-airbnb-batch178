@@ -38,11 +38,15 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
     @apartment.user = current_user
     if @apartment.save
-      params[:photos]['photo'].each do |a|
-          @photo = @apartment.photos.create!(photo: a)
-       end
-      params[:apartment]["equip_ids"].each do |p|
-        JoinAptEquip.create(apartment_id: @apartment.id, equip_id: p)
+      if params[:photos]['photo'].length > 0
+        params[:photos]['photo'].each do |a|
+            @photo = @apartment.photos.create!(photo: a)
+         end
+      end
+      if params[:apartment]["equip_ids"].length > 0
+        params[:apartment]["equip_ids"].each do |p|
+          JoinAptEquip.create(apartment_id: @apartment.id, equip_id: p)
+        end
       end
       redirect_to apartment_path(@apartment)
     else
@@ -62,17 +66,22 @@ class ApartmentsController < ApplicationController
 
   def update
     if @apartment.update(apartment_params)
-      params[:photos]['photo'].each do |a|
-        @photo = @apartment.photos.create(photo: a)
+      if params[:photos]
+        params[:photos]['photo'].each do |a|
+            @photo = @apartment.photos.create!(photo: a)
+         end
       end
+
 
       joins = JoinAptEquip.where(apartment: @apartment)
       joins.each do |j|
          j.destroy
       end
 
-      params[:apartment]["equip_ids"].each do |p|
-        JoinAptEquip.create(apartment_id: @apartment.id, equip_id: p)
+      if params[:apartment]["equip_ids"]
+        params[:apartment]["equip_ids"].each do |p|
+          JoinAptEquip.create(apartment_id: @apartment.id, equip_id: p)
+        end
       end
       redirect_to apartment_path(@apartment)
     else
