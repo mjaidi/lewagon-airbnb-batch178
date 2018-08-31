@@ -6,8 +6,10 @@
 
 <div class="wrapper-home">
 <div class="container full-width">
+  <div class="clipped">
 <div class="title-dest">
   <h3> Find your new destination </h3>
+  </div>
   </div>
 
   <div class="row">
@@ -23,7 +25,7 @@
                 </ol> -->
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
+              <div class="carousel-inner" role="listbox">
                   <% if apartment.photos.length > 0 %>
                   <% apartment.photos.each_with_index do |p,i| %>
                     <% if i == 0 %>
@@ -76,7 +78,7 @@
                   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-              </div>
+            </div>
               <div class="card-footer">
                 <p>Posted on <%=apartment.created_at%></p>
                 <div class="controls">
@@ -90,11 +92,12 @@
       <% end %>
   </div>
 
-
 <hr>
+
 <div class="title-dest">
-  <h3> Into Originality </h3>
+  <h3 class="effect-shine"> Into Originality </h3>
   </div>
+
   <hr>
   <div class="row">
       <% @insolite.each do |apartment| %>
@@ -176,8 +179,8 @@
       <% end %>
   </div>
 
-
   <hr>
+
 <div class="title-dest">
   <h3> Boat Experience </h3>
   </div>

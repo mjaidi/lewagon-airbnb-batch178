@@ -10,12 +10,20 @@
 
 .title-banner{
 font-family: 'Jua', sans-serif;
+text-shadow: 2px 2px grey;
 }
 
 .title-dest{
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   font-family: 'Sawarabi Mincho', sans-serif;
+  overflow:hidden;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
  hr{
@@ -25,5 +33,19 @@ font-family: 'Jua', sans-serif;
     justify-content: center;
   }
 
+/* effect-shine */
+.title-dest:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
 
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
 
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
