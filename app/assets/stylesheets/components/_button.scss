@@ -21,7 +21,8 @@ background-color: #ed5434;
 .form-control-btn{
   border-radius: 8px;
   height: 38px;
-
+  display: flex;
+  margin-top: 10px;
 }
 
 .btn-default.booking-btn {
@@ -34,7 +35,6 @@ background-color: #ed5434;
 }
 
 .searchButton {
-
   position: absolute;
   right: -50px;
   width: 40px;

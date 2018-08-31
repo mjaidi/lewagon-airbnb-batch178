@@ -20,11 +20,6 @@
     text-align: right;
 }
 /* Logo */
-.navbar-wagon-brand {
-  font-size: 40px;
-  color: #00B4CC;
-}
-
 img{
   height:70px;
 }
@@ -69,7 +64,7 @@ img{
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: white!important;
+  color: #616668!important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -111,9 +106,6 @@ img{
 }
 }
 
-// .navbar-wagon-item.navbar-wagon-link{
-//   color: grey;
-// }
 .navbar-wagon-item.navbar-wagon-link:hover{
   color: grey;
 }
